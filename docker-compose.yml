@@ -1,15 +1,23 @@
+# "docker compose up -d" liefert alles: Datenbank, Schema und Testdaten.
+# Lokales Python ist dafuer nicht noetig.
+#
+#   db     PostgreSQL, Daten im benannten Volume
+#   setup  laeuft einmal: migrate + seed, danach beendet er sich
+#   web    Django-Container, wartet auf setup, schlaeft dann und nimmt Befehle an
+#   adminer  Weboberflaeche (Zugangsdaten unten)
+
 services:
   db:
     image: postgres:16-alpine
     container_name: bibliothek-db
-    # Zugangsdaten als Default: das Projekt laeuft ohne .env.
-    # Wer eigene Werte will, legt eine .env an (siehe .env.example) -- noetig ist das nicht.
     environment:
       POSTGRES_DB: ${POSTGRES_DB:-bibliothek}
       POSTGRES_USER: ${POSTGRES_USER:-bibliothek}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-bibliothek}
     ports:
       # Absichtlich 5433: eine lokal installierte PostgreSQL auf 5432 bleibt unberuehrt.
+      # Nur fuer Adminer und Werkzeuge auf dem eigenen Rechner -- der Container "web"
+      # verbindet sich intern ueber "db:5432".
       - "${DB_PORT:-5433}:5432"
     volumes:
       - db_data:/var/lib/postgresql/data
@@ -21,11 +29,66 @@ services:
       start_period: 10s
     restart: unless-stopped
 
+  # Laeuft einmal bei jedem "up" und beendet sich: Schema anlegen, Daten laden.
+  # "seed" prueft vorher, ob schon Buecher da sind -- der zweite "up" ist daher
+  # ohne Wirkung und wirft keine PK-Konflikte.
+  setup:
+    build: .
+    container_name: bibliothek-setup
+    command: >
+      sh -c "python manage.py migrate &&
+             python manage.py seed"
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-bibliothek}
+      POSTGRES_USER: ${POSTGRES_USER:-bibliothek}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-bibliothek}
+      # Intern heisst der Datenbankserver "db" und lauscht auf 5432.
+      POSTGRES_HOST: db
+      POSTGRES_PORT: "5432"
+    volumes:
+      # Das Projekt wird gemountet, nicht ins Image kopiert: Aenderungen an den
+      # eigenen .py-Dateien sind sofort im Container wirksam.
+      - .:/app
+    depends_on:
+      db:
+        condition: service_healthy
+    restart: "no"
+
+  # Bleibt am Leben und nimmt Befehle an:
+  #   docker compose exec web python manage.py shell
+  web:
+    build: .
+    container_name: bibliothek-web
+    command: sleep infinity
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-bibliothek}
+      POSTGRES_USER: ${POSTGRES_USER:-bibliothek}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-bibliothek}
+      POSTGRES_HOST: db
+      POSTGRES_PORT: "5432"
+    volumes:
+      - .:/app
+    depends_on:
+      db:
+        condition: service_healthy
+      setup:
+        # Erst wenn setup erfolgreich durchgelaufen ist, startet web.
+        condition: service_completed_successfully
+    restart: unless-stopped
+
   adminer:
     image: adminer:4
     container_name: bibliothek-adminer
+    # Adminer laeuft nur mit dem Profil "adminer". Grund: Ist Port 8080 auf dem
+    # Rechner belegt, bricht "docker compose up -d" mit einem Portfehler ab und
+    # startet "web" nicht mehr -- dann schlaegt jeder "exec"-Befehl fehl.
+    # Ohne Profil startet "up -d" daher nur db, setup und web: das laeuft immer.
+    #
+    #   docker compose up -d                      -> db, setup, web
+    #   docker compose --profile adminer up -d    -> zusaetzlich Adminer
+    profiles: ["adminer"]
     ports:
-      - "8080:8080"
+      - "${ADMINER_PORT:-8080}:8080"
     depends_on:
       db:
         condition: service_healthy

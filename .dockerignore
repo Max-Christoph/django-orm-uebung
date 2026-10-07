@@ -1,0 +1,25 @@
+# Nicht ins Image kopieren -- beim Mounten zur Laufzeit stoert es zwar nicht,
+# beim Build spart es aber Zeit und Konflikte.
+
+.git
+.gitignore
+.venv
+venv
+env
+
+__pycache__
+*.py[cod]
+*.egg-info
+
+*.sqlite3
+db.sqlite3
+
+.env
+.vscode
+.idea
+.DS_Store
+
+docs
+LICENSE
+README.md
+Makefile

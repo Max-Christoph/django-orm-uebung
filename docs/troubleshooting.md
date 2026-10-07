@@ -2,11 +2,85 @@
 
 Sechs Probleme, die in der Übung praktisch immer auftreten — plus die Standardlösung.
 
-Die ersten sechs Abschnitte sind nach Häufigkeit geordnet.
+Die Abschnitte sind nach Häufigkeit geordnet.
 
 ---
 
-## 1. „no such table" / „relation ... does not exist" — Migration vergessen
+## 1. `service "web" is not running`
+
+**Meldung:**
+
+```
+service "web" is not running
+```
+
+Das ist der häufigste Fehler. Er bedeutet: `web` läuft nicht — und fast immer liegt es daran,
+dass **ein anderer Dienst den Start abgebrochen hat**.
+
+**Immer zuerst nachsehen, was überhaupt läuft:**
+
+```bash
+docker compose ps -a
+```
+
+Die möglichen Fälle:
+
+- `web` zeigt `Created` (nicht `Up`) → ein anderer Dienst konnte nicht starten. Siehe Problem 2.
+- `setup` zeigt nicht `Exited (0)` → `setup` ist gescheitert und `web` wartet bewusst darauf.
+  Siehe Problem 3.
+- `db` ist nicht `healthy` → siehe Problem 5.
+- Alles sieht gut aus, aber `exec` scheitert trotzdem → führe `docker compose up -d` erneut aus;
+  beim zweiten Lauf startet `web` normalerweise nach.
+
+**Prüfen, ob `web` nun läuft:**
+
+```bash
+docker compose ps
+docker compose exec web python manage.py shell
+```
+
+---
+
+## 2. „Port 8080 is already allocated"
+
+**Meldung:**
+
+```
+Error response from daemon: failed to set up container networking: driver failed
+programming external connectivity on endpoint bibliothek-adminer (...):
+Bind for :::8080 failed: port is already allocated
+```
+
+**Ursache:** Auf Port 8080 läuft schon etwas anderes — ein Entwicklungsserver, ein anderes
+Projekt oder ein bereits laufender Adminer.
+
+Genau deshalb startet Adminer **nicht** mit `docker compose up -d`. Er liegt in einem eigenen
+Profil, damit dieser Portkonflikt nicht den ganzen Start abreißt und `web` mit in den Abgrund
+zieht.
+
+**Prüfen, wer den Port hält:**
+
+```bash
+sudo lsof -i :8080
+netstat -ano | findstr :8080        # Windows (PowerShell)
+```
+
+**Lösen:** Adminer auf einen anderen Port legen:
+
+```bash
+cp .env.example .env
+# in .env: ADMINER_PORT=8081
+docker compose --profile adminer up -d
+```
+
+Adminer ist dann unter <http://localhost:8081> erreichbar.
+
+**Wenn du Adminer gar nicht brauchst**, ignoriere den Fehler. Die Datenbank und `web` sind
+davon nicht betroffen — sie verbinden sich intern über `db:5432`.
+
+---
+
+## 3. „no such table" / „relation ... does not exist"
 
 **Meldung:**
 
@@ -21,48 +95,58 @@ django.db.utils.ProgrammingError: Problem installing fixture: relation
 "bibliothek_autor" does not exist
 ```
 
-**Ursache:** Die Tabellen existieren nicht. Modelle in Python sind nur eine Beschreibung —
-erst `makemigrations` erzeugt daraus eine Migration, `migrate` legt die Tabellen an.
+**Ursache:** Die Tabellen fehlen. Beim Start legt der Dienst `setup` sie automatisch an — aber
+nur, wenn er erfolgreich durchlief.
 
-Im Schnellstart steht `makemigrations` mit dabei, weil `bibliothek/migrations/` leer ist:
+**Prüfen, was `setup` gemacht hat:**
 
 ```bash
-python manage.py makemigrations && python manage.py migrate && python manage.py loaddata demo
+docker compose logs setup
+docker inspect --format='{{.State.ExitCode}}' bibliothek-setup
 ```
 
-Das `&&` ist wichtig — läuft ein Schritt nicht durch, wird der nächste gar nicht erst versucht.
-Führe die Befehle im Zweifel einzeln aus, dann siehst du, welcher scheitert.
+`ExitCode: 0` heißt erfolgreich. Das Log sollte enthalten:
 
-**Lösung, immer in dieser Reihenfolge:**
-
-```bash
-python manage.py makemigrations
-python manage.py migrate
-python manage.py loaddata demo
+```
+Applying bibliothek.0001_initial... OK
+Testdaten geladen: 60 Autoren, 400 Buecher, 12 Kategorien.
 ```
 
-**Häufige Variante:** Du hast Übung 1 bearbeitet (Feld `verlag` ergänzt) und danach nicht
-migriert:
+**Häufige Variante — Übung 1 bearbeitet, aber nicht migriert.** Nach dem Ändern von `models.py`
+gehört dazu immer:
 
 ```bash
-python manage.py makemigrations bibliothek   # "Add field verlag to buch"
-python manage.py migrate
+docker compose exec web python manage.py makemigrations
+docker compose exec web python manage.py migrate
+```
+
+Die Ausgabe von `makemigrations` sollte nennen:
+
+```
+Migrations for 'bibliothek':
+  bibliothek/migrations/0002_buch_verlag.py
+    - Add field verlag to buch
+```
+
+**Migrationen von Hand nachziehen:**
+
+```bash
+docker compose exec web python manage.py migrate
 ```
 
 **Kontrolle, ob die Tabellen da sind:**
 
 ```bash
-python manage.py dbshell
+docker compose exec web python manage.py dbshell
 # darin:
 \dt bibliothek_*
 ```
 
 **Sonderfall:** Läuft `migrate` durch, aber `makemigrations` meldet „No changes detected",
 obwohl du `models.py` geändert hast — dann ist die App nicht registriert. Das ist hier bereits
-eingerichtet (`INSTALLED_APPS` enthält `bibliothek`), aber falls du die Datei angefasst hast:
+eingerichtet, aber falls du `config/settings.py` angefasst hast:
 
 ```python
-# config/settings.py
 INSTALLED_APPS = [
     'bibliothek',
     # ...
@@ -71,9 +155,9 @@ INSTALLED_APPS = [
 
 ---
 
-## 2. „password authentication failed" oder „role does not exist"
+## 4. „password authentication failed" oder „role does not exist"
 
-**Meldung (aus Django):**
+**Meldung:**
 
 ```
 django.db.utils.OperationalError: connection failed:
@@ -81,72 +165,59 @@ FATAL:  password authentication failed for user "bibliothek"
 ```
 
 **Ursache 1 — `.env` liegt herum und weicht ab.** Normalerweise brauchst du keine `.env`: Die
-Zugangsdaten stehen als Default in `docker-compose.yml`. Legst du aber eine `.env` an, gilt
-deren Inhalt.
-
-Prüfen, ob eine `.env` existiert:
+Zugangsdaten stehen als Default in `docker-compose.yml`. Legst du aber eine an, gilt deren
+Inhalt — auch bei Benutzer und Passwort.
 
 ```bash
 ls -la .env
 ```
 
-Gibt es eine und du brauchst sie nicht:
-
-```bash
-rm .env
-docker compose down -v && docker compose up -d
-python manage.py migrate
-python manage.py loaddata demo
-```
-
-**Ursache 2 — die Zugangsdaten wurden nach dem ersten Start geändert.** PostgreSQL legt Benutzer
-und Passwort **nur beim allerersten Start** an. Danach passt das Volume nicht mehr zur
+**Ursache 2 — Zugangsdaten nach dem ersten Start geändert.** PostgreSQL legt Benutzer und
+Passwort **nur beim allerersten Start** an. Danach passt das Volume nicht mehr zur
 Konfiguration. Ein Neustart hilft nicht, das Volume muss weg:
 
 ```bash
 docker compose down -v
 docker compose up -d
-python manage.py migrate
-python manage.py loaddata demo
 ```
 
-`-v` entfernt das Volume. Ohne `-v` bleibt der alte Benutzer bestehen und der Fehler kommt wieder.
+`-v` entfernt das Volume. Danach richtet `setup` alles neu ein — kein `migrate` von Hand nötig.
 
-**Gegenprobe, ob die Zugangsdaten stimmen:**
+**Gegenprobe:**
 
 ```bash
 docker compose exec db psql -U bibliothek -d bibliothek -c "select current_user, current_database();"
 ```
 
-**Ursache 3 — `settings.py` wurde verändert.** Der `DATABASES`-Block ist fertig. Falls du dort
-etwas angepasst hast, muss er so aussehen:
+**Ursache 3 — `config/settings.py` wurde verändert.** Der Block liest die Werte aus der
+Umgebung; die Defaults passen zum lokalen Weg. Im Container setzt `docker-compose.yml`
+`POSTGRES_HOST=db` und `POSTGRES_PORT=5432`. Falls du dort etwas geändert hast, muss es so
+aussehen:
 
 ```python
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'bibliothek',
-        'USER': 'bibliothek',
-        'PASSWORD': 'bibliothek',
-        'HOST': '127.0.0.1',
-        'PORT': '5433',
+        'NAME': os.environ.get('POSTGRES_DB', 'bibliothek'),
+        'USER': os.environ.get('POSTGRES_USER', 'bibliothek'),
+        'PASSWORD': os.environ.get('POSTGRES_PASSWORD', 'bibliothek'),
+        'HOST': os.environ.get('POSTGRES_HOST', '127.0.0.1'),
+        'PORT': os.environ.get('POSTGRES_PORT', '5433'),
     }
 }
 ```
 
+Wichtig: Der Host ist **`db`**, nicht `localhost` — aus Sicht der Container heißt der
+Datenbankserver so.
+
 ---
 
-## 3. Container startet nicht / bleibt „unhealthy"
+## 5. Die Container starten nicht / `db` wird nicht `healthy`
 
 **Prüfen:**
 
 ```bash
-docker compose ps
-```
-
-Zeigt `db` nicht `healthy`, sondern `starting` oder `unhealthy`, sagt das Log warum:
-
-```bash
+docker compose ps -a
 docker compose logs db
 ```
 
@@ -160,7 +231,7 @@ docker compose logs db
   docker compose up -d
   ```
 
-  Achtung: `-v` löscht alle Daten. Danach `migrate` und `loaddata demo` erneut ausführen.
+  Achtung: `-v` löscht alle Daten. `setup` richtet danach alles neu ein.
 
 - `database system is starting up` in Schleife — einfach warten. Der erste Start initialisiert
   das Datenverzeichnis und braucht ein paar Sekunden. Der Healthcheck hat ein `start_period`
@@ -180,40 +251,37 @@ docker compose exec db pg_isready -U bibliothek -d bibliothek
 # /var/run/postgresql:5432 - accepting connections
 ```
 
+**Läuft `web` nicht, obwohl `setup` erfolgreich war?** Dann siehe Problem 1.
+
 ---
 
-## 4. „Port 5433 is already allocated" / Port belegt
+## 6. „Port 5433 is already allocated"
 
 **Meldung:**
 
 ```
-Error response from daemon: driver failed programming external connectivity ...:
 Bind for 0.0.0.0:5433 failed: port is already allocated
 ```
 
 **Ursache:** Auf 5433 läuft schon etwas — meist ein älterer Container dieser Übung oder eine
-zweite PostgreSQL-Instanz.
+PostgreSQL-Instanz, die jemand bewusst auf 5433 gelegt hat.
 
-**Prüfen, wer den Port hält:**
+**Prüfen:**
 
 ```bash
-# Linux / macOS
 sudo lsof -i :5433
-# oder
-sudo ss -tlnp | grep 5433
-
-# Windows (PowerShell)
-netstat -ano | findstr :5433
+sudo ss -tlnp | grep 5433        # Linux
+netstat -ano | findstr :5433     # Windows
 ```
 
-**Lösen:** Den belegenden Prozess beenden. Ist es ein alter Container dieser Übung:
+**Lösen:** Alten Container entfernen:
 
 ```bash
 docker compose down
-docker ps -a          # nach bibliothek-db suchen
+docker ps -a | grep bibliothek
 ```
 
-Bleibt der Port belegt, in `.env` einen anderen Wert setzen:
+Oder den Port verlegen:
 
 ```bash
 cp .env.example .env
@@ -221,108 +289,24 @@ cp .env.example .env
 docker compose up -d
 ```
 
-Wichtig: Dann muss auch `PORT` in `config/settings.py` auf `5434` geändert werden. Ein anderer
-Port ist kein Fehler — die Übung nutzt bewusst 5433, um nicht mit einer lokal installierten
-PostgreSQL auf 5432 zu kollidieren.
-
----
-
-## 5. Docker ist nicht installiert (SQLite-Ausweg)
-
-Kein Docker und keine Zeit, es einzurichten? Die Übung läuft auch mit SQLite.
-
-In `config/settings.py` den `DATABASES`-Block ersetzen durch:
-
-```python
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
-```
-
-Dann wie gewohnt:
-
-```bash
-python manage.py migrate
-python manage.py loaddata demo
-```
-
-**Was dabei anders ist:**
-
-- Kein Adminer. Die Datenbank ist eine einzelne Datei `db.sqlite3`.
-- Keine Benutzer und Passwörter — das entfällt als Fehlerquelle, ist aber auch nicht mehr Teil
-  der Übung.
-- SQL-Typen und Funktionen weichen von PostgreSQL ab. `print(qs.query)` sieht anders aus.
-- Beide Übungen funktionieren unverändert.
-
-Für die Übung reicht das. Für das Verständnis von PostgreSQL nicht — wenn möglich, Docker nutzen.
-
----
-
-## 6. „Fixture 'demo' not found"
-
-**Meldung:**
-
-```
-CommandError: No fixture named 'demo' found.
-```
-
-**Ursache:** Django sucht Fixtures an drei Orten:
-
-1. `<app>/fixtures/` — hier `bibliothek/fixtures/`
-2. allen Verzeichnissen aus `FIXTURE_DIRS`
-3. absoluten Pfaden
-
-Die Datei liegt in `fixtures/demo.json`, also **weder** im App-Ordner **noch** ohne Eintrag in
-`FIXTURE_DIRS` auffindbar.
-
-In diesem Projekt ist das eingerichtet:
-
-```python
-FIXTURE_DIRS = [BASE_DIR / 'fixtures']
-```
-
-**Prüfen, ob die Zeile noch da ist:**
-
-```bash
-grep -n "FIXTURE_DIRS" config/settings.py
-```
-
-**Häufige Ursache:** Du führst den Befehl aus dem falschen Verzeichnis aus. `manage.py` muss im
-aktuellen Ordner liegen:
-
-```bash
-ls manage.py
-python manage.py loaddata demo
-```
-
-**Alternativ** den Pfad direkt angeben — zum Testen nützlich:
-
-```bash
-python manage.py loaddata fixtures/demo.json
-```
-
-**Kontrolle, ob die Datei überhaupt da ist:**
-
-```bash
-ls -la fixtures/demo.json
-```
+Der Port 5433 ist nur für Werkzeuge **auf deinem Rechner** gedacht. Die Dienste `web` und
+`setup` verbinden sich intern über `db:5432` und sind von diesem Problem nicht betroffen.
 
 ---
 
 ## Kurzübersicht
 
 ```bash
-# Immer zuerst: laufen die Container?
-docker compose ps
+# Immer zuerst: was laeuft ueberhaupt? (-a zeigt auch gestoppte Container)
+docker compose ps -a
 
-# Immer als Nächstes: was sagt die Datenbank?
-docker compose logs db
+# Wenn web nicht laeuft: woran scheiterte setup?
+docker compose logs setup
+docker inspect --format='{{.State.ExitCode}}' bibliothek-setup
+
+# Wenn der Start mit einem Portfehler abbricht:
+docker compose up -d                     # Fehlermeldung lesen
 
 # Der Neustart von Null (loescht alle Daten)
 docker compose down -v && docker compose up -d
-python manage.py migrate
-python manage.py loaddata demo
 ```

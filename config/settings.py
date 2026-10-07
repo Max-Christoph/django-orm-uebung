@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -73,15 +74,18 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
+# Die Werte kommen aus der Umgebung. Die Defaults passen zum lokalen Weg
+# (venv, Datenbank auf 127.0.0.1:5433); im Container setzt docker-compose.yml
+# POSTGRES_HOST=db und POSTGRES_PORT=5432.
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'bibliothek',
-        'USER': 'bibliothek',
-        'PASSWORD': 'bibliothek',
-        'HOST': '127.0.0.1',
-        # 5433, damit eine lokal installierte PostgreSQL auf 5432 nicht stoert.
-        'PORT': '5433',
+        'NAME': os.environ.get('POSTGRES_DB', 'bibliothek'),
+        'USER': os.environ.get('POSTGRES_USER', 'bibliothek'),
+        'PASSWORD': os.environ.get('POSTGRES_PASSWORD', 'bibliothek'),
+        'HOST': os.environ.get('POSTGRES_HOST', '127.0.0.1'),
+        # 5433 lokal, damit eine installierte PostgreSQL auf 5432 nicht stoert.
+        'PORT': os.environ.get('POSTGRES_PORT', '5433'),
     }
 }
 
@@ -129,3 +133,15 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# ---------------------------------------------------------------------------
+# Alternative ohne PostgreSQL (z. B. ohne Docker):
+#
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+# ---------------------------------------------------------------------------
