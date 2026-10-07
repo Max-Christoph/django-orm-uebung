@@ -1,71 +1,37 @@
 # django-orm-uebung
 
-PostgreSQL und Testdaten für die Django-ORM-Übung (DHBW Karlsruhe).
+PostgreSQL und Testdaten für die Django-ORM-Übung.
 
-**Dieses Repository enthält bewusst keinen Django-Projektcode.** Es liefert nur die Datenbank
-(Docker Compose) und die Testdaten. Das Django-Projekt baust du im Vortrag selbst auf — Schritt
-für Schritt, nach der Anleitung unten.
-
----
-
-## Zweck
-
-Wer das ORM verstehen will, braucht Daten, an denen sich etwas zeigen lässt: genug Zeilen für
-sinnvolle Abfragen, Verknüpfungen über Fremdschlüssel und eine m:n-Beziehung. Genau das liegt
-hier bereit — 60 Autoren, 400 Bücher, 12 Kategorien.
-
-Die Übung ist so gebaut, dass die Datenbank **läuft, während du dein Projekt aufbaust**. Du
-kümmerst dich nicht um Installation, Benutzer und Rechte von PostgreSQL, sondern nur um Django.
+**Du musst nichts konfigurieren. Das Projekt ist fertig eingerichtet — klonen, starten, üben.**
 
 ---
 
 ## Voraussetzungen
 
-- **Docker** mit Compose (getestet mit Docker 29.x und Compose v5.x) — oder alternativ der
-  SQLite-Ausweg, siehe `docs/troubleshooting.md`
-- **Python 3.10 oder neuer** (`python --version`)
-- **Django 5.x** und **psycopg 3** — werden gleich installiert
-- Optional `make` für die Kurzbefehle
+- **Docker** (getestet mit Docker 29.x und Docker Compose v5.x)
+- **Python 3.10 oder neuer**
 
-Prüfen, ob Docker läuft:
+Prüfen:
 
 ```bash
-docker --version
-docker compose version
-docker run --rm hello-world
+docker --version && docker compose version
+python --version
 ```
 
 ---
 
 ## Schnellstart
 
-Die Reihenfolge ist wichtig — erst die Datenbank, dann das Projekt.
-
 ```bash
-git clone https://github.com/Max-Christoph/django-orm-uebung.git django-orm-uebung && cd django-orm-uebung
-cp .env.example .env
+git clone https://github.com/Max-Christoph/django-orm-uebung.git && cd django-orm-uebung
 docker compose up -d
 python -m venv .venv && source .venv/bin/activate     # Windows: .venv\Scripts\activate
-pip install django "psycopg[binary]"
-django-admin startproject config .
-python manage.py startapp bibliothek
-```
-
-Jetzt in `config/settings.py` zwei Dinge anpassen:
-
-1. `"bibliothek"` in `INSTALLED_APPS` aufnehmen.
-2. Den `DATABASES`-Block durch den PostgreSQL-Block aus `snippets/settings_db.py` ersetzen —
-   **inklusive** `FIXTURE_DIRS`.
-
-Dann:
-
-```bash
-python manage.py makemigrations && python manage.py migrate
-python manage.py loaddata demo
+pip install -r requirements.txt
+python manage.py makemigrations && python manage.py migrate && python manage.py loaddata demo
 python manage.py shell
 ```
 
-In der Shell testen:
+In der Shell prüfen:
 
 ```python
 from bibliothek.models import Autor, Buch, Kategorie
@@ -74,107 +40,81 @@ Buch.objects.count()       # 400
 Kategorie.objects.count()  # 12
 ```
 
-Läuft das, ist die Umgebung fertig.
+Fertig. **Es ist nichts einzurichten.** Keine `.env` anlegen, nichts in `settings.py`
+bearbeiten, keine App registrieren.
+
+Denke daran: Bei jeder neuen Shell-Sitzung muss die virtuelle Umgebung aktiv sein
+(`source .venv/bin/activate`).
+
+**Deine erste Änderung am Projekt ist Übung 1.**
+
+Warum `makemigrations` dabeisteht: `bibliothek/migrations/` ist bewusst leer. Damit siehst du
+einmal, woher die Tabellen kommen — `makemigrations` erzeugt aus den Modellen eine Migration,
+`migrate` legt daraus die Tabellen an. Das `&&` sorgt dafür, dass der nächste Befehl nur läuft,
+wenn der vorige geklappt hat.
+
+---
+
+## Was bereits eingerichtet ist
+
+Damit du sofort mit dem ORM anfangen kannst, liegt das Projekt vollständig vor:
+
+- `config/settings.py` — `INSTALLED_APPS` enthält `bibliothek`, `DATABASES` zeigt auf
+  PostgreSQL `127.0.0.1:5433`, `FIXTURE_DIRS` zeigt auf `fixtures/`
+- `bibliothek/models.py` — `Autor`, `Kategorie`, `Buch`
+- `requirements.txt` — Django und psycopg
+- `docker-compose.yml` — PostgreSQL 16 und Adminer, Zugangsdaten als Default
+
+Fehlt noch etwas? Siehe `docs/troubleshooting.md`.
 
 ---
 
 ## Die Modelle
 
-Diese Modelle gehören in `bibliothek/models.py`. Sie sind verbindlich — die Testdaten passen
-genau dazu.
+`bibliothek/models.py`:
 
 ```python
-from django.db import models
-
-
 class Autor(models.Model):
     name = models.CharField(max_length=100)
     geburtsjahr = models.IntegerField()
 
-    def __str__(self):
-        return self.name
-
-
 class Kategorie(models.Model):
     name = models.CharField(max_length=60)
-
-    def __str__(self):
-        return self.name
-
 
 class Buch(models.Model):
     titel = models.CharField(max_length=200)
     autor = models.ForeignKey(Autor, on_delete=models.CASCADE, related_name="buecher")
     erscheinungsjahr = models.IntegerField()
     kategorien = models.ManyToManyField(Kategorie, related_name="buecher", blank=True)
-
-    def __str__(self):
-        return self.titel
 ```
 
-**Ein Feld fehlt absichtlich:** `verlag`. Das ergänzt du in Aufgabe A1.
-
-Die `__str__`-Methoden sind kein Beiwerk — ohne sie zeigt die Django-Shell und später der
-Admin-Bereich `Buch object (1)` statt des Titels.
+Die Testdaten passen genau dazu.
 
 ---
 
-## Aufgaben
+## Übungen
 
-Die Musterlösung liegt in `docs/musterloesung.md`. Erst selbst probieren.
+Die Lösungen liegen in `docs/musterlösung.md`. Erst selbst probieren.
 
-### A1 — Feld ergänzen
+### Übung 1 — Feld ergänzen
 
-`Buch` fehlt ein Feld `verlag` (`CharField`, `max_length=120`). Ergänze es im Modell, erzeuge
-eine Migration und spiele sie ein.
+`Buch` fehlt ein Feld `verlag` (`CharField`, `max_length=120`). Ergänze es, erzeuge eine
+Migration und spiele sie ein.
 
-Achte darauf, dass die 400 vorhandenen Zeilen gültig bleiben — ohne Vorgabewert schlägt die
-Migration fehl.
+Beachte: In der Tabelle stehen bereits 400 Zeilen. Ohne Vorgabewert bricht die Migration ab.
 
-### A2 — Filtern, Ordnen, Begrenzen
+### Übung 2 — Abfragen
 
 1. Alle Bücher von Kafka.
 2. Wie viele Bücher hat Kafka?
 3. Alle Autoren mit Geburtsjahr vor 1900, alphabetisch nach Name.
 4. Die 10 neuesten Bücher.
-5. Alle Bücher vor 1900, älteste zuerst.
-
-### A3 — Aggregation und Gruppierung
-
-1. Wie viele Bücher gibt es, und wie alt sind sie im Durchschnitt?
-2. Ältestes und neuestes Erscheinungsjahr.
-3. Bücher pro Autor — absteigend sortiert.
-4. Autoren mit mehr als 5 Büchern.
-5. Die 10 Kategorien mit den meisten Büchern.
-
-### A4 — Mit SQL-Ausgabe nachvollziehen
-
-1. `filter()` gegen `exclude()` — beide für „Kafka", dann `print(qs.query)` für beide.
-2. Zwei Bedingungen mit UND, dann zwei mit ODER (`Q`-Objekte).
-3. Zeige das erzeugte SQL einer Abfrage mit Fremdschlüssel-Filter.
-4. Warum löst eine Schleife über Bücher mit `buch.autor.name` so viele Abfragen aus?
-   Zeige die Lösung mit `select_related()`.
-
-### A5 — Löschen
-
-1. Wie viele Bücher sind vor 1900 erschienen?
-2. Lösche sie. Was gibt `delete()` zurück?
-3. Wie viele Bücher bleiben übrig?
-4. Was passiert mit den Autoren? Warum?
-
-### Bonus — die m:n-Beziehung
-
-1. Alle Bücher einer Kategorie.
-2. Alle Kategorien eines Buchs.
-3. Bücher mit mehr als einer Kategorie.
-4. Alle Bücher der Kategorie „Roman", die vor 1900 erschienen sind.
-5. Eine Verknüpfung anlegen und wieder lösen (`add`/`remove`/`set`).
-
-### Zusatz A6 — das SQL lesen
-
-Nimm eine beliebige Abfrage aus A3 oder A4 und erkläre Zeile für Zeile, was
-`print(qs.query)` ausgibt. Warum heißt die Spalte `autor_id` und nicht `autor`?
-Wo landet der Fremdschlüssel im SQL?
+5. Wie viele Bücher gibt es insgesamt, und wie hoch ist das durchschnittliche
+   Erscheinungsjahr?
+6. Ältestes und neuestes Erscheinungsjahr.
+7. Bücher pro Autor, absteigend sortiert.
+8. Lass dir zu einer der Abfragen mit `print(qs.query)` das erzeugte SQL ausgeben.
+   Erkläre, was du siehst.
 
 ---
 
@@ -186,8 +126,7 @@ make status    # Zustand der Container
 make psql      # psql-Shell in der Datenbank
 make logs      # Logs der Datenbank, mitlaufend
 make down      # Container stoppen (Daten bleiben)
-make reset     # Container stoppen UND Daten löschen
-make fixture   # fixtures/demo.json neu erzeugen
+make reset     # Container stoppen UND Daten loeschen
 ```
 
 Ohne `make`:
@@ -210,7 +149,7 @@ Beim Anmelden:
 
 - **System:** PostgreSQL
 - **Server:** `db` (nicht `localhost` — aus Sicht des Containers heißt der Datenbankserver so)
-- **Benutzername / Passwort / Datenbank:** die Werte aus `.env`
+- **Benutzername / Passwort / Datenbank:** `bibliothek`
 
 Adminer ist zum Nachschauen nützlich. Die Übung selbst läuft über die Django-Shell.
 
@@ -227,8 +166,9 @@ python manage.py migrate
 python manage.py loaddata demo
 ```
 
-`-v` entfernt das Volume — alle Daten sind weg, auch das `verlag`-Feld aus A1. Die Migrationen
-in `bibliothek/migrations/` bleiben erhalten.
+`-v` entfernt das Volume — alle Daten sind weg, auch das `verlag`-Feld aus Übung 1. Die
+Migration in `bibliothek/migrations/` bleibt erhalten, `makemigrations` brauchst du hier
+also nicht erneut.
 
 Nur die Daten neu laden, ohne die Datenbank neu zu bauen:
 
@@ -254,12 +194,12 @@ Das Skript braucht kein Django und keine Datenbank, nur Python. Andere Größen:
 python scripts/make_fixture.py --autoren 100 --buecher 800 --out /tmp/gross.json
 ```
 
-**Feste Ankerpunkte**, damit die Aufgaben immer dasselbe Ergebnis liefern:
+**Feste Ankerpunkte**, damit die Übungen immer dasselbe Ergebnis liefern:
 
 - `pk 1` der Autoren ist **Kafka** (1883)
-- `pk 1` der Bücher ist **Die Verwandlung** (1915)
+- `pk 1` der Bücher ist **Die Verwandlung** (1915), Kategorie „Roman"
 - **Zweig** (1881) ist ebenfalls enthalten
-- 225 Bücher sind vor 1900 erschienen — genug für Aufgabe A5
+- 225 Bücher sind vor 1900 erschienen
 - 49 Autoren sind vor 1900 geboren
 
 ---
@@ -268,35 +208,38 @@ python scripts/make_fixture.py --autoren 100 --buecher 800 --out /tmp/gross.json
 
 ```
 django-orm-uebung/
-├── docker-compose.yml        PostgreSQL 16 + Adminer
-├── .env.example              Vorlage für die Zugangsdaten
-├── Makefile                  Kurzbefehle
-├── LICENSE                   MIT
-├── README.md                 diese Datei
+├── docker-compose.yml         PostgreSQL 16 + Adminer
+├── .env.example               optional, für eigene Zugangsdaten
+├── Makefile                   Kurzbefehle
+├── LICENSE                    MIT
+├── README.md                  diese Datei
+├── manage.py
+├── requirements.txt           django, psycopg[binary]
+├── config/                    Django-Projekt
+│   ├── settings.py            fertig konfiguriert (PostgreSQL 5433, FIXTURE_DIRS)
+│   ├── urls.py
+│   ├── asgi.py
+│   └── wsgi.py
+├── bibliothek/                die App
+│   ├── models.py              Autor, Kategorie, Buch
+│   └── migrations/            noch leer — Übung 1 erzeugt die erste
 ├── fixtures/
-│   └── demo.json             Testdaten (60/400/12)
+│   └── demo.json              Testdaten (60/400/12)
 ├── scripts/
-│   └── make_fixture.py       erzeugt die Fixture neu
-├── snippets/
-│   └── settings_db.py        fertige DATABASES-Blöcke
+│   └── make_fixture.py        erzeugt die Fixture neu
 └── docs/
-    ├── musterlösung.md       Lösungen A1–A5, Bonus, A6
-    └── troubleshooting.md    typische Fehler
+    ├── musterlösung.md        Lösungen zu beiden Übungen
+    └── troubleshooting.md     sechs typische Fehler
 ```
-
-**Kein Django-Code.** Kein `manage.py`, kein `settings.py`, keine `models.py`, keine
-`migrations/`. Das ist Absicht: Du legst das Projekt selbst an und verstehst dadurch jeden
-Schritt, statt eine fertige Vorlage zu öffnen.
 
 ---
 
-## Was dieses Repository nicht ist
+## Hinweise
 
-- Kein lauffähiges Django-Projekt — es ist die Datenbank dazu.
-- Keine Produktionskonfiguration. Die Zugangsdaten in `.env.example` sind Übungswerte, für die
-  lokale Entwicklung gedacht, nicht für einen erreichbaren Server.
-- Keine vollständige Einführung ins ORM. Die Aufgaben sind der Rahmen, `docs/musterlösung.md`
-  die Erklärung.
+- Die Zugangsdaten `bibliothek`/`bibliothek` sind Übungswerte für die lokale Entwicklung,
+  nicht für einen erreichbaren Server.
+- `.env` wird nicht committet (steht in `.gitignore`).
+- Port **5433** statt 5432, damit eine lokal installierte PostgreSQL auf 5432 nicht stört.
 
 ---
 

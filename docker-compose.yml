@@ -2,12 +2,14 @@ services:
   db:
     image: postgres:16-alpine
     container_name: bibliothek-db
+    # Zugangsdaten als Default: das Projekt laeuft ohne .env.
+    # Wer eigene Werte will, legt eine .env an (siehe .env.example) -- noetig ist das nicht.
     environment:
       POSTGRES_DB: ${POSTGRES_DB:-bibliothek}
       POSTGRES_USER: ${POSTGRES_USER:-bibliothek}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-bibliothek}
     ports:
-      # Absichtlich 5433: eine lokal installierte PostgreSQL auf 5432 bleibt unberührt.
+      # Absichtlich 5433: eine lokal installierte PostgreSQL auf 5432 bleibt unberuehrt.
       - "${DB_PORT:-5433}:5432"
     volumes:
       - db_data:/var/lib/postgresql/data
