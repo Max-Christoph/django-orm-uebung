@@ -160,6 +160,8 @@ SQL der Kafka-Abfrage:
           ORDER BY "bibliothek_buch"."erscheinungsjahr" ASC
 ```
 
+Die SQL-Zeile ist hier nur zur Lesbarkeit umbrochen — das Skript gibt sie in einer Zeile aus.
+
 Zur Orientierung, was das Skript zeigt:
 
 - **Zählen** — 60 / 400 / 12, der Datenbestand stimmt
