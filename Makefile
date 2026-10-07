@@ -3,11 +3,12 @@
 # Django laeuft im Container "web". Diese Ziele ersparen dir das lange
 # "docker compose exec ..." -- brauchen aber kein lokales Python.
 
-.PHONY: help up down reset psql logs shell dbshell makemigrations migrate seed fixture status
+.PHONY: help up down reset psql logs shell dbshell makemigrations migrate seed fixture status run adminer
 
 help:
 	@echo "make up             Datenbank, Schema und Testdaten starten (docker compose up -d)"
 	@echo "make shell          Django-Shell im Container (hier arbeitest du)"
+	@echo "make run F=x.py     eigenes Skript im Container ausfuehren"
 	@echo "make makemigrations Migration aus deinen Modellen erzeugen"
 	@echo "make migrate        Migrationen einspielen"
 	@echo "make seed           Testdaten laden, falls die Tabellen leer sind"
@@ -44,6 +45,12 @@ status:
 # --- Hier arbeitest du ------------------------------------------------------
 shell:
 	docker compose exec web python manage.py shell
+
+# Eigenes Skript im Container ausfuehren: make run F=mein_skript.py
+# "-T" schaltet die Pseudo-TTY ab, damit die Ausgabe auch beim Weiterleiten
+# oder in Skripten sauber ankommt.
+run:
+	docker compose exec -T web python manage.py shell -c "exec(open('$(F)').read())"
 
 makemigrations:
 	docker compose exec web python manage.py makemigrations

@@ -109,6 +109,119 @@ make migrate
 
 ---
 
+## Eigenes Skript ausführen
+
+Alles Zeile für Zeile in der Shell einzutippen wird schnell mühsam. Sobald du eine längere
+Abfrage ausprobierst, schreibe sie in eine Datei — dann kannst du sie ändern und neu starten,
+ohne alles neu zu tippen.
+
+Im Projektordner liegt dafür `beispiel.py`. Starten:
+
+```bash
+docker compose exec web python beispiel.py
+```
+
+Erwartete Ausgabe:
+
+```
+Autoren:    60
+Buecher:    400
+Kategorien: 12
+
+Buecher von Kafka:
+   Die Herbst einer Nacht 1760
+   Der Abschied im Norden 1788
+   Die Lied in den Bergen 1790
+   Ein Nacht im Norden 1855
+   Ein Haus einer Freundschaft 1856
+   Das Urteil 1913
+   Die Verwandlung 1915
+   Eine Jahr einer Nacht 1919
+   Der Prozess 1925
+   Der Kirche einer Nacht 1976
+   Eine Stadt der verlorenen Zeit 2012
+   Eine Dorf der verlorenen Zeit 2017
+
+Durchschnittliches Erscheinungsjahr:
+   {'schnitt': 1884.45}
+
+Die fuenf Autoren mit den meisten Buechern:
+   Lessing - 15
+   Reuter - 13
+   Fontane - 12
+   Kafka - 12
+   Mann - 12
+
+SQL der Kafka-Abfrage:
+   SELECT "bibliothek_buch"."id", "bibliothek_buch"."titel", "bibliothek_buch"."autor_id",
+          "bibliothek_buch"."erscheinungsjahr" FROM "bibliothek_buch"
+          INNER JOIN "bibliothek_autor" ON ("bibliothek_buch"."autor_id" = "bibliothek_autor"."id")
+          WHERE "bibliothek_autor"."name" = Kafka
+          ORDER BY "bibliothek_buch"."erscheinungsjahr" ASC
+```
+
+Zur Orientierung, was das Skript zeigt:
+
+- **Zählen** — 60 / 400 / 12, der Datenbestand stimmt
+- **Filtern** — alle Bücher von Kafka, nach Erscheinungsjahr sortiert
+- **Aggregieren** — `aggregate()` liefert einen einzelnen Wert (1884.45), keine Liste
+- **Gruppieren** — `annotate()` hängt jedem Autor eine berechnete Zahl an
+- **SQL ansehen** — `print(qs.query)` zeigt die echte Datenbankabfrage
+- Am Ende steht ein auskommentiertes `create()`: Schreiben geht genauso, ist aber
+  absichtlich deaktiviert, damit die Testdaten unverändert bleiben.
+
+### Der Kopf ist Pflicht
+
+Jedes eigene Skript braucht diese Zeilen **ganz oben**:
+
+```python
+import os
+import django
+
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config.settings")
+django.setup()
+
+# erst jetzt die Modelle importieren
+from bibliothek.models import Autor, Buch, Kategorie
+```
+
+`os.environ.setdefault(...)` sagt Django, welche Einstellungsdatei gilt — hier
+`config/settings.py`. `django.setup()` lädt die Apps und die Datenbankverbindung. **Ohne diese
+beiden Zeilen scheitern die Modell-Importe** mit:
+
+```
+django.core.exceptions.ImproperlyConfigured: Requested setting INSTALLED_APPS,
+but settings are not configured.
+```
+
+Die Reihenfolge ist ebenfalls wichtig: `django.setup()` muss **vor** den Modell-Imports stehen,
+sonst sind die Modelle noch nicht registriert.
+
+Wenn du `beispiel.py` kopierst, tausch nur den Teil unter `# --- Los geht's ---` aus.
+
+Das Skript mit `make` ausführen:
+
+```bash
+make run F=beispiel.py
+make run F=mein_skript.py
+```
+
+`F` ist der Dateiname im Projektordner.
+
+### Alternative: alles in der Shell
+
+Wenn du nur kurz eine einzelne Zeile ausprobieren willst, brauchst du keine Datei:
+
+```bash
+docker compose exec web python manage.py shell
+```
+
+Das ist derselbe Python-Interpreter mit demselben Django-Kontext — nur Zeile für Zeile statt
+als Datei. Für längere Abfragen ist ein Skript aber übersichtlicher, weil du es behalten und
+wiederholen kannst.
+
+---
+
 ## Die Modelle
 
 `bibliothek/models.py`:
@@ -167,6 +280,7 @@ Beachte: In der Tabelle stehen bereits 400 Zeilen. Ohne Vorgabewert bricht die M
 ```bash
 make up        # alles starten (db, setup, web)
 make shell     # Django-Shell im Container
+make run F=x.py # eigenes Skript im Container ausfuehren
 make adminer   # Adminer zusätzlich starten (http://localhost:8080)
 make status    # Zustand der Container
 make logs      # Logs, mitlaufend
@@ -181,6 +295,7 @@ Ohne `make`:
 docker compose up -d
 docker compose ps -a
 docker compose exec web python manage.py shell
+docker compose exec web python beispiel.py
 docker compose exec db psql -U bibliothek -d bibliothek
 docker compose --profile adminer up -d adminer     # Adminer zusätzlich
 docker compose down
@@ -294,11 +409,12 @@ Das Skript ist das einzige, das lokales Python braucht. Es läuft ohne Django un
 ```
 django-orm-uebung/
 ├── Dockerfile                 python:3.12-slim, Django + psycopg
-├── docker-compose.yml         db, setup, web, adminer
+├── docker-compose.yml         db, setup, web (adminer nur mit Profil)
 ├── .env.example               optional, für eigene Zugangsdaten
 ├── Makefile                   Kurzbefehle
 ├── LICENSE                    MIT
 ├── README.md                  diese Datei
+├── beispiel.py                Beispielskript: ORM aus einer eigenen Datei
 ├── manage.py
 ├── requirements.txt           django, psycopg[binary]
 ├── config/                    Django-Projekt
