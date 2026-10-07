@@ -1,0 +1,34 @@
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: bibliothek-db
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-bibliothek}
+      POSTGRES_USER: ${POSTGRES_USER:-bibliothek}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-bibliothek}
+    ports:
+      # Absichtlich 5433: eine lokal installierte PostgreSQL auf 5432 bleibt unberührt.
+      - "${DB_PORT:-5433}:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-bibliothek} -d ${POSTGRES_DB:-bibliothek}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
+    restart: unless-stopped
+
+  adminer:
+    image: adminer:4
+    container_name: bibliothek-adminer
+    ports:
+      - "8080:8080"
+    depends_on:
+      db:
+        condition: service_healthy
+    restart: unless-stopped
+
+volumes:
+  db_data:
+    name: bibliothek_db_data

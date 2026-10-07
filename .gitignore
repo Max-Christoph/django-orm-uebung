@@ -1,0 +1,20 @@
+# Zugangsdaten -- niemals committen. Vorlage: .env.example
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+
+# Django
+*.sqlite3
+db.sqlite3
+staticfiles/
+
+# Editor / Betriebssystem
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

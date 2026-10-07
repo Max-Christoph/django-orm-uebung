@@ -1,0 +1,5004 @@
+[
+  {
+    "model": "bibliothek.kategorie",
+    "pk": 1,
+    "fields": {
+      "name": "Roman"
+    }
+  },
+  {
+    "model": "bibliothek.kategorie",
+    "pk": 2,
+    "fields": {
+      "name": "Lyrik"
+    }
+  },
+  {
+    "model": "bibliothek.kategorie",
+    "pk": 3,
+    "fields": {
+      "name": "Drama"
+    }
+  },
+  {
+    "model": "bibliothek.kategorie",
+    "pk": 4,
+    "fields": {
+      "name": "Krimi"
+    }
+  },
+  {
+    "model": "bibliothek.kategorie",
+    "pk": 5,
+    "fields": {
+      "name": "Science-Fiction"
+    }
+  },
+  {
+    "model": "bibliothek.kategorie",
+    "pk": 6,
+    "fields": {
+      "name": "Fantasy"
+    }
+  },
+  {
+    "model": "bibliothek.kategorie",
+    "pk": 7,
+    "fields": {
+      "name": "Sachbuch"
+    }
+  },
+  {
+    "model": "bibliothek.kategorie",
+    "pk": 8,
+    "fields": {
+      "name": "Biografie"
+    }
+  },
+  {
+    "model": "bibliothek.kategorie",
+    "pk": 9,
+    "fields": {
+      "name": "Kinderbuch"
+    }
+  },
+  {
+    "model": "bibliothek.kategorie",
+    "pk": 10,
+    "fields": {
+      "name": "Horror"
+    }
+  },
+  {
+    "model": "bibliothek.kategorie",
+    "pk": 11,
+    "fields": {
+      "name": "Historischer Roman"
+    }
+  },
+  {
+    "model": "bibliothek.kategorie",
+    "pk": 12,
+    "fields": {
+      "name": "Essay"
+    }
+  },
+  {
+    "model": "bibliothek.autor",
+    "pk": 1,
+    "fields": {
+      "name": "Kafka",
+      "geburtsjahr": 1883
+    }
+  },
+  {
+    "model": "bibliothek.autor",
+    "pk": 2,
+    "fields": {
+      "name": "Zweig",
+      "geburtsjahr": 1881
+    }
+  },
+  {
+    "model": "bibliothek.autor",
+    "pk": 3,
+    "fields": {
+      "name": "Goethe",
+      "geburtsjahr": 1749
+    }
+  },
+  {
+    "model": "bibliothek.autor",
+    "pk": 4,
+    "fields": {
+      "name": "Schiller",
+      "geburtsjahr": 1759
+    }
+  },
+  {
+    "model": "bibliothek.autor",
+    "pk": 5,
+    "fields": {
+      "name": "Fontane",
+      "geburtsjahr": 1819
+    }
+  },
+  {
+    "model": "bibliothek.autor",
+    "pk": 6,
+    "fields": {
+      "name": "Heine",
+      "geburtsjahr": 1797
+    }
+  },
+  {
+    "model": "bibliothek.autor",
+    "pk": 7,
+    "fields": {
+      "name": "Storm",
+      "geburtsjahr": 1817
+    }
+  },
+  {
+    "model": "bibliothek.autor",
+    "pk": 8,
+    "fields": {
+      "name": "Keller",
+      "geburtsjahr": 1819
+    }
+  },
+  {
+    "model": "bibliothek.autor",
+    "pk": 9,
+    "fields": {
+      "name": "Stifter",
+      "geburtsjahr": 1805
+    }
+  },
+  {
+    "model": "bibliothek.autor",
+    "pk": 10,
+    "fields": {
+      "name": "Büchner",
+      "geburtsjahr": 1813
+    }
+  },
+  {
+    "model": "bibliothek.autor",
+    "pk": 11,
+    "fields": {
+      "name": "Hebbel",
+      "geburtsjahr": 1813
+    }
+  },
+  {
+    "model": "bibliothek.autor",
+    "pk": 12,
+    "fields": {
+      "name": "Mörike",
+      "geburtsjahr": 1804
+    }
+  },
+  {
+    "model": "bibliothek.autor",
+    "pk": 13,
+    "fields": {
+      "name": "Eichendorff",
+      "geburtsjahr": 1788
+    }
+  },
+  {
+    "model": "bibliothek.autor",
+    "pk": 14,
+    "fields": {
+      "name": "Novalis",
+      "geburtsjahr": 1772
+    }
+  },
+  {
+    "model": "bibliothek.autor",
+    "pk": 15,
+    "fields": {
+      "name": "Hölderlin",
+      "geburtsjahr": 1770
+    }
+  },
+  {
+    "model": "bibliothek.autor",
+    "pk": 16,
+    "fields": {
+      "name": "Kleist",
+      "geburtsjahr": 1777
+    }
+  },
+  {
+    "model": "bibliothek.autor",
+    "pk": 17,
+    "fields": {
+      "name": "Lessing",
+      "geburtsjahr": 1729
+    }
+  },
+  {
+    "model": "bibliothek.autor",
+    "pk": 18,
+    "fields": {
+      "name": "Wieland",
+      "geburtsjahr": 1733
+    }
+  },
+  {
+    "model": "bibliothek.autor",
+    "pk": 19,
+    "fields": {
+      "name": "Klopstock",
+      "geburtsjahr": 1724
+    }
+  },
+  {
+    "model": "bibliothek.autor",
+    "pk": 20,
+    "fields": {
+      "name": "Tieck",
+      "geburtsjahr": 1773
+    }
+  },
+  {
+    "model": "bibliothek.autor",
+    "pk": 21,
+    "fields": {
+      "name": "Brentano",
+      "geburtsjahr": 1778
+    }
+  },
+  {
+    "model": "bibliothek.autor",
+    "pk": 22,
+    "fields": {
+      "name": "Arnim",
+      "geburtsjahr": 1781
+    }
+  },
+  {
+    "model": "bibliothek.autor",
+    "pk": 23,
+    "fields": {
+      "name": "Chamisso",
+      "geburtsjahr": 1781
+    }
+  },
+  {
+    "model": "bibliothek.autor",
+    "pk": 24,
+    "fields": {
+      "name": "Droste-Hülshoff",
+      "geburtsjahr": 1797
+    }
+  },
+  {
+    "model": "bibliothek.autor",
+    "pk": 25,
+    "fields": {
+      "name": "Gotthelf",
+      "geburtsjahr": 1797
+    }
+  },
+  {
+    "model": "bibliothek.autor",
+    "pk": 26,
+    "fields": {
+      "name": "Raabe",
+      "geburtsjahr": 1831
+    }
+  },
+  {
+    "model": "bibliothek.autor",
+    "pk": 27,
+    "fields": {
+      "name": "Meyer",
+      "geburtsjahr": 1825
+    }
+  },
+  {
+    "model": "bibliothek.autor",
+    "pk": 28,
+    "fields": {
+      "name": "Ebner-Eschenbach",
+      "geburtsjahr": 1830
+    }
+  },
+  {
+    "model": "bibliothek.autor",
+    "pk": 29,
+    "fields": {
+      "name": "Hauptmann",
+      "geburtsjahr": 1862
+    }
+  },
+  {
+    "model": "bibliothek.autor",
+    "pk": 30,
+    "fields": {
+      "name": "Schnitzler",
+      "geburtsjahr": 1862
+    }
+  },
+  {
+    "model": "bibliothek.autor",
+    "pk": 31,
+    "fields": {
+      "name": "Hofmannsthal",
+      "geburtsjahr": 1874
+    }
+  },
+  {
+    "model": "bibliothek.autor",
+    "pk": 32,
+    "fields": {
+      "name": "Rilke",
+      "geburtsjahr": 1875
+    }
+  },
+  {
+    "model": "bibliothek.autor",
+    "pk": 33,
+    "fields": {
+      "name": "Mann",
+      "geburtsjahr": 1875
+    }
+  },
+  {
+    "model": "bibliothek.autor",
+    "pk": 34,
+    "fields": {
+      "name": "Hesse",
+      "geburtsjahr": 1877
+    }
+  },
+  {
+    "model": "bibliothek.autor",
+    "pk": 35,
+    "fields": {
+      "name": "Döblin",
+      "geburtsjahr": 1878
+    }
+  },
+  {
+    "model": "bibliothek.autor",
+    "pk": 36,
+    "fields": {
+      "name": "Trakl",
+      "geburtsjahr": 1887
+    }
+  },
+  {
+    "model": "bibliothek.autor",
+    "pk": 37,
+    "fields": {
+      "name": "Werfel",
+      "geburtsjahr": 1890
+    }
+  },
+  {
+    "model": "bibliothek.autor",
+    "pk": 38,
+    "fields": {
+      "name": "Musil",
+      "geburtsjahr": 1880
+    }
+  },
+  {
+    "model": "bibliothek.autor",
+    "pk": 39,
+    "fields": {
+      "name": "Broch",
+      "geburtsjahr": 1886
+    }
+  },
+  {
+    "model": "bibliothek.autor",
+    "pk": 40,
+    "fields": {
+      "name": "Roth",
+      "geburtsjahr": 1894
+    }
+  },
+  {
+    "model": "bibliothek.autor",
+    "pk": 41,
+    "fields": {
+      "name": "Fallada",
+      "geburtsjahr": 1893
+    }
+  },
+  {
+    "model": "bibliothek.autor",
+    "pk": 42,
+    "fields": {
+      "name": "Kästner",
+      "geburtsjahr": 1899
+    }
+  },
+  {
+    "model": "bibliothek.autor",
+    "pk": 43,
+    "fields": {
+      "name": "Brecht",
+      "geburtsjahr": 1898
+    }
+  },
+  {
+    "model": "bibliothek.autor",
+    "pk": 44,
+    "fields": {
+      "name": "Zuckmayer",
+      "geburtsjahr": 1896
+    }
+  },
+  {
+    "model": "bibliothek.autor",
+    "pk": 45,
+    "fields": {
+      "name": "Seghers",
+      "geburtsjahr": 1900
+    }
+  },
+  {
+    "model": "bibliothek.autor",
+    "pk": 46,
+    "fields": {
+      "name": "Böll",
+      "geburtsjahr": 1917
+    }
+  },
+  {
+    "model": "bibliothek.autor",
+    "pk": 47,
+    "fields": {
+      "name": "Grass",
+      "geburtsjahr": 1927
+    }
+  },
+  {
+    "model": "bibliothek.autor",
+    "pk": 48,
+    "fields": {
+      "name": "Walser",
+      "geburtsjahr": 1927
+    }
+  },
+  {
+    "model": "bibliothek.autor",
+    "pk": 49,
+    "fields": {
+      "name": "Süskind",
+      "geburtsjahr": 1949
+    }
+  },
+  {
+    "model": "bibliothek.autor",
+    "pk": 50,
+    "fields": {
+      "name": "Wolf",
+      "geburtsjahr": 1929
+    }
+  },
+  {
+    "model": "bibliothek.autor",
+    "pk": 51,
+    "fields": {
+      "name": "Sommer",
+      "geburtsjahr": 1978
+    }
+  },
+  {
+    "model": "bibliothek.autor",
+    "pk": 52,
+    "fields": {
+      "name": "Sander",
+      "geburtsjahr": 1943
+    }
+  },
+  {
+    "model": "bibliothek.autor",
+    "pk": 53,
+    "fields": {
+      "name": "Krause",
+      "geburtsjahr": 1949
+    }
+  },
+  {
+    "model": "bibliothek.autor",
+    "pk": 54,
+    "fields": {
+      "name": "Reuter",
+      "geburtsjahr": 1887
+    }
+  },
+  {
+    "model": "bibliothek.autor",
+    "pk": 55,
+    "fields": {
+      "name": "Hahn",
+      "geburtsjahr": 1980
+    }
+  },
+  {
+    "model": "bibliothek.autor",
+    "pk": 56,
+    "fields": {
+      "name": "Hartmann",
+      "geburtsjahr": 1897
+    }
+  },
+  {
+    "model": "bibliothek.autor",
+    "pk": 57,
+    "fields": {
+      "name": "Gerber",
+      "geburtsjahr": 1926
+    }
+  },
+  {
+    "model": "bibliothek.autor",
+    "pk": 58,
+    "fields": {
+      "name": "Thiele",
+      "geburtsjahr": 1892
+    }
+  },
+  {
+    "model": "bibliothek.autor",
+    "pk": 59,
+    "fields": {
+      "name": "Amsel",
+      "geburtsjahr": 1884
+    }
+  },
+  {
+    "model": "bibliothek.autor",
+    "pk": 60,
+    "fields": {
+      "name": "Scholz",
+      "geburtsjahr": 1839
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 1,
+    "fields": {
+      "titel": "Die Verwandlung",
+      "autor": 1,
+      "erscheinungsjahr": 1915,
+      "kategorien": [
+        1
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 2,
+    "fields": {
+      "titel": "Der Prozess",
+      "autor": 1,
+      "erscheinungsjahr": 1925,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 3,
+    "fields": {
+      "titel": "Das Urteil",
+      "autor": 1,
+      "erscheinungsjahr": 1913,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 4,
+    "fields": {
+      "titel": "Die Welt von Gestern",
+      "autor": 2,
+      "erscheinungsjahr": 1942,
+      "kategorien": [
+        3
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 5,
+    "fields": {
+      "titel": "Schachnovelle",
+      "autor": 2,
+      "erscheinungsjahr": 1942,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 6,
+    "fields": {
+      "titel": "Brief einer Unbekannten",
+      "autor": 2,
+      "erscheinungsjahr": 1922,
+      "kategorien": [
+        3,
+        9
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 7,
+    "fields": {
+      "titel": "Faust",
+      "autor": 3,
+      "erscheinungsjahr": 1808,
+      "kategorien": [
+        8
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 8,
+    "fields": {
+      "titel": "Die Leiden des jungen Werthers",
+      "autor": 3,
+      "erscheinungsjahr": 1774,
+      "kategorien": [
+        2
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 9,
+    "fields": {
+      "titel": "Wilhelm Meisters Lehrjahre",
+      "autor": 3,
+      "erscheinungsjahr": 1795,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 10,
+    "fields": {
+      "titel": "Die Räuber",
+      "autor": 4,
+      "erscheinungsjahr": 1781,
+      "kategorien": [
+        1,
+        3,
+        11
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 11,
+    "fields": {
+      "titel": "Kabale und Liebe",
+      "autor": 4,
+      "erscheinungsjahr": 1784,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 12,
+    "fields": {
+      "titel": "Wallenstein",
+      "autor": 4,
+      "erscheinungsjahr": 1799,
+      "kategorien": [
+        4
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 13,
+    "fields": {
+      "titel": "Effi Briest",
+      "autor": 5,
+      "erscheinungsjahr": 1895,
+      "kategorien": [
+        1
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 14,
+    "fields": {
+      "titel": "Der Stechlin",
+      "autor": 5,
+      "erscheinungsjahr": 1898,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 15,
+    "fields": {
+      "titel": "Der Schimmelreiter",
+      "autor": 7,
+      "erscheinungsjahr": 1888,
+      "kategorien": [
+        8
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 16,
+    "fields": {
+      "titel": "Der grüne Heinrich",
+      "autor": 8,
+      "erscheinungsjahr": 1854,
+      "kategorien": [
+        9
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 17,
+    "fields": {
+      "titel": "Romeo und Julia auf dem Dorfe",
+      "autor": 8,
+      "erscheinungsjahr": 1856,
+      "kategorien": [
+        10,
+        12
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 18,
+    "fields": {
+      "titel": "Buch der Lieder",
+      "autor": 6,
+      "erscheinungsjahr": 1827,
+      "kategorien": [
+        1,
+        6,
+        8
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 19,
+    "fields": {
+      "titel": "Aus dem Leben eines Taugenichts",
+      "autor": 13,
+      "erscheinungsjahr": 1826,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 20,
+    "fields": {
+      "titel": "Heinrich von Ofterdingen",
+      "autor": 14,
+      "erscheinungsjahr": 1802,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 21,
+    "fields": {
+      "titel": "Hyperion",
+      "autor": 15,
+      "erscheinungsjahr": 1797,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 22,
+    "fields": {
+      "titel": "Der zerbrochne Krug",
+      "autor": 16,
+      "erscheinungsjahr": 1811,
+      "kategorien": [
+        9
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 23,
+    "fields": {
+      "titel": "Michael Kohlhaas",
+      "autor": 16,
+      "erscheinungsjahr": 1810,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 24,
+    "fields": {
+      "titel": "Nathan der Weise",
+      "autor": 17,
+      "erscheinungsjahr": 1779,
+      "kategorien": [
+        9
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 25,
+    "fields": {
+      "titel": "Emilia Galotti",
+      "autor": 17,
+      "erscheinungsjahr": 1772,
+      "kategorien": [
+        12
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 26,
+    "fields": {
+      "titel": "Woyzeck",
+      "autor": 10,
+      "erscheinungsjahr": 1837,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 27,
+    "fields": {
+      "titel": "Dantons Tod",
+      "autor": 10,
+      "erscheinungsjahr": 1835,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 28,
+    "fields": {
+      "titel": "Die Judenbuche",
+      "autor": 24,
+      "erscheinungsjahr": 1842,
+      "kategorien": [
+        2,
+        6
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 29,
+    "fields": {
+      "titel": "Der Hungerpastor",
+      "autor": 26,
+      "erscheinungsjahr": 1864,
+      "kategorien": [
+        11
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 30,
+    "fields": {
+      "titel": "Der Heilige",
+      "autor": 27,
+      "erscheinungsjahr": 1880,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 31,
+    "fields": {
+      "titel": "Die Weber",
+      "autor": 29,
+      "erscheinungsjahr": 1892,
+      "kategorien": [
+        2
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 32,
+    "fields": {
+      "titel": "Reigen",
+      "autor": 30,
+      "erscheinungsjahr": 1900,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 33,
+    "fields": {
+      "titel": "Leutnant Gustl",
+      "autor": 30,
+      "erscheinungsjahr": 1900,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 34,
+    "fields": {
+      "titel": "Der Tod des Tizian",
+      "autor": 31,
+      "erscheinungsjahr": 1892,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 35,
+    "fields": {
+      "titel": "Die Weise von Liebe und Tod des Cornets",
+      "autor": 32,
+      "erscheinungsjahr": 1906,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 36,
+    "fields": {
+      "titel": "Buddenbrooks",
+      "autor": 33,
+      "erscheinungsjahr": 1901,
+      "kategorien": [
+        2
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 37,
+    "fields": {
+      "titel": "Der Zauberberg",
+      "autor": 33,
+      "erscheinungsjahr": 1924,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 38,
+    "fields": {
+      "titel": "Siddhartha",
+      "autor": 34,
+      "erscheinungsjahr": 1922,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 39,
+    "fields": {
+      "titel": "Berlin Alexanderplatz",
+      "autor": 35,
+      "erscheinungsjahr": 1929,
+      "kategorien": [
+        10
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 40,
+    "fields": {
+      "titel": "Gedichte",
+      "autor": 36,
+      "erscheinungsjahr": 1913,
+      "kategorien": [
+        12
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 41,
+    "fields": {
+      "titel": "Der Mann ohne Eigenschaften",
+      "autor": 38,
+      "erscheinungsjahr": 1930,
+      "kategorien": [
+        1,
+        4
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 42,
+    "fields": {
+      "titel": "Kleiner Mann - was nun?",
+      "autor": 41,
+      "erscheinungsjahr": 1932,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 43,
+    "fields": {
+      "titel": "Fabian",
+      "autor": 42,
+      "erscheinungsjahr": 1931,
+      "kategorien": [
+        1,
+        8
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 44,
+    "fields": {
+      "titel": "Die Dreigroschenoper",
+      "autor": 43,
+      "erscheinungsjahr": 1928,
+      "kategorien": [
+        11,
+        12
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 45,
+    "fields": {
+      "titel": "Der Stimme aus Staub",
+      "autor": 48,
+      "erscheinungsjahr": 1995,
+      "kategorien": [
+        1
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 46,
+    "fields": {
+      "titel": "Die Hoffnung in den Bergen",
+      "autor": 47,
+      "erscheinungsjahr": 1856,
+      "kategorien": [
+        2
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 47,
+    "fields": {
+      "titel": "Eine Tag am Meer",
+      "autor": 20,
+      "erscheinungsjahr": 1859,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 48,
+    "fields": {
+      "titel": "Eine Erinnerung der Dinge",
+      "autor": 40,
+      "erscheinungsjahr": 1891,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 49,
+    "fields": {
+      "titel": "Die Hoffnung aus Staub",
+      "autor": 7,
+      "erscheinungsjahr": 2011,
+      "kategorien": [
+        1
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 50,
+    "fields": {
+      "titel": "Das Schloss der Dinge",
+      "autor": 10,
+      "erscheinungsjahr": 1756,
+      "kategorien": [
+        12
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 51,
+    "fields": {
+      "titel": "Ein Nacht ohne Namen",
+      "autor": 29,
+      "erscheinungsjahr": 1837,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 52,
+    "fields": {
+      "titel": "Ein Haus einer Freundschaft",
+      "autor": 1,
+      "erscheinungsjahr": 1856,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 53,
+    "fields": {
+      "titel": "Eine Tag aus Papier",
+      "autor": 14,
+      "erscheinungsjahr": 1919,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 54,
+    "fields": {
+      "titel": "Die Fluss im Norden",
+      "autor": 21,
+      "erscheinungsjahr": 1756,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 55,
+    "fields": {
+      "titel": "Ein Winter in Blau",
+      "autor": 55,
+      "erscheinungsjahr": 1989,
+      "kategorien": [
+        6
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 56,
+    "fields": {
+      "titel": "Ein Regen der verlorenen Zeit",
+      "autor": 55,
+      "erscheinungsjahr": 1897,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 57,
+    "fields": {
+      "titel": "Ein Herbst einer Nacht",
+      "autor": 60,
+      "erscheinungsjahr": 1936,
+      "kategorien": [
+        7
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 58,
+    "fields": {
+      "titel": "Der Sturm nach dem Regen",
+      "autor": 50,
+      "erscheinungsjahr": 1842,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 59,
+    "fields": {
+      "titel": "Das Spiegel aus Staub",
+      "autor": 17,
+      "erscheinungsjahr": 1894,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 60,
+    "fields": {
+      "titel": "Die Dorf im Exil",
+      "autor": 34,
+      "erscheinungsjahr": 1876,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 61,
+    "fields": {
+      "titel": "Der Jahr im Exil",
+      "autor": 34,
+      "erscheinungsjahr": 1841,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 62,
+    "fields": {
+      "titel": "Der Traum einer Nacht",
+      "autor": 31,
+      "erscheinungsjahr": 1912,
+      "kategorien": [
+        3,
+        11
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 63,
+    "fields": {
+      "titel": "Eine Dorf vor dem Krieg",
+      "autor": 54,
+      "erscheinungsjahr": 1992,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 64,
+    "fields": {
+      "titel": "Ein Stunde der verlorenen Zeit",
+      "autor": 50,
+      "erscheinungsjahr": 1822,
+      "kategorien": [
+        4
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 65,
+    "fields": {
+      "titel": "Das Anfang im Exil",
+      "autor": 3,
+      "erscheinungsjahr": 2020,
+      "kategorien": [
+        5,
+        7,
+        12
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 66,
+    "fields": {
+      "titel": "Das Fenster nach dem Regen",
+      "autor": 3,
+      "erscheinungsjahr": 1891,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 67,
+    "fields": {
+      "titel": "Das Abschied im Norden",
+      "autor": 45,
+      "erscheinungsjahr": 1850,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 68,
+    "fields": {
+      "titel": "Eine Sturm der verlorenen Zeit",
+      "autor": 48,
+      "erscheinungsjahr": 1992,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 69,
+    "fields": {
+      "titel": "Der Kind in den Bergen",
+      "autor": 26,
+      "erscheinungsjahr": 1823,
+      "kategorien": [
+        5
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 70,
+    "fields": {
+      "titel": "Der Kind ohne Namen",
+      "autor": 51,
+      "erscheinungsjahr": 1825,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 71,
+    "fields": {
+      "titel": "Die Garten am Meer",
+      "autor": 32,
+      "erscheinungsjahr": 1753,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 72,
+    "fields": {
+      "titel": "Ein Regen am Rand",
+      "autor": 50,
+      "erscheinungsjahr": 1924,
+      "kategorien": [
+        1
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 73,
+    "fields": {
+      "titel": "Die Licht einer Nacht",
+      "autor": 46,
+      "erscheinungsjahr": 1781,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 74,
+    "fields": {
+      "titel": "Die Herbst einer Nacht",
+      "autor": 1,
+      "erscheinungsjahr": 1760,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 75,
+    "fields": {
+      "titel": "Eine Traum aus Staub",
+      "autor": 49,
+      "erscheinungsjahr": 1806,
+      "kategorien": [
+        5
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 76,
+    "fields": {
+      "titel": "Die Tag nach dem Regen",
+      "autor": 30,
+      "erscheinungsjahr": 1914,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 77,
+    "fields": {
+      "titel": "Das Garten am Meer",
+      "autor": 24,
+      "erscheinungsjahr": 1966,
+      "kategorien": [
+        6
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 78,
+    "fields": {
+      "titel": "Der Traum der verlorenen Zeit",
+      "autor": 48,
+      "erscheinungsjahr": 1762,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 79,
+    "fields": {
+      "titel": "Der Garten in den Bergen",
+      "autor": 11,
+      "erscheinungsjahr": 1788,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 80,
+    "fields": {
+      "titel": "Ein Weg aus Papier",
+      "autor": 45,
+      "erscheinungsjahr": 1871,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 81,
+    "fields": {
+      "titel": "Die Stadt aus Staub",
+      "autor": 56,
+      "erscheinungsjahr": 1770,
+      "kategorien": [
+        1
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 82,
+    "fields": {
+      "titel": "Der Regen im Exil",
+      "autor": 39,
+      "erscheinungsjahr": 1790,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 83,
+    "fields": {
+      "titel": "Die Ufer in den Bergen",
+      "autor": 44,
+      "erscheinungsjahr": 1773,
+      "kategorien": [
+        4,
+        9
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 84,
+    "fields": {
+      "titel": "Das Schatten in den Bergen",
+      "autor": 54,
+      "erscheinungsjahr": 1883,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 85,
+    "fields": {
+      "titel": "Der Lied nach dem Regen",
+      "autor": 17,
+      "erscheinungsjahr": 1811,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 86,
+    "fields": {
+      "titel": "Der Schatten vor dem Krieg",
+      "autor": 26,
+      "erscheinungsjahr": 1933,
+      "kategorien": [
+        7
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 87,
+    "fields": {
+      "titel": "Eine Fluss ohne Namen",
+      "autor": 33,
+      "erscheinungsjahr": 1910,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 88,
+    "fields": {
+      "titel": "Eine Reise nach dem Regen",
+      "autor": 5,
+      "erscheinungsjahr": 1999,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 89,
+    "fields": {
+      "titel": "Ein Ufer ohne Namen",
+      "autor": 51,
+      "erscheinungsjahr": 1980,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 90,
+    "fields": {
+      "titel": "Ein Stadt am Meer",
+      "autor": 57,
+      "erscheinungsjahr": 1815,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 91,
+    "fields": {
+      "titel": "Die Schloss im Exil",
+      "autor": 55,
+      "erscheinungsjahr": 1807,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 92,
+    "fields": {
+      "titel": "Ein Dorf nach dem Regen",
+      "autor": 48,
+      "erscheinungsjahr": 1989,
+      "kategorien": [
+        11
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 93,
+    "fields": {
+      "titel": "Ein Jahr im Zwielicht",
+      "autor": 52,
+      "erscheinungsjahr": 1965,
+      "kategorien": [
+        1
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 94,
+    "fields": {
+      "titel": "Das Regen aus Staub",
+      "autor": 55,
+      "erscheinungsjahr": 1822,
+      "kategorien": [
+        11
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 95,
+    "fields": {
+      "titel": "Eine Hoffnung einer Nacht",
+      "autor": 4,
+      "erscheinungsjahr": 1826,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 96,
+    "fields": {
+      "titel": "Ein Haus aus Staub",
+      "autor": 16,
+      "erscheinungsjahr": 1834,
+      "kategorien": [
+        1,
+        10,
+        12
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 97,
+    "fields": {
+      "titel": "Eine Garten ohne Namen",
+      "autor": 12,
+      "erscheinungsjahr": 1802,
+      "kategorien": [
+        3,
+        12
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 98,
+    "fields": {
+      "titel": "Die Morgen in Blau",
+      "autor": 16,
+      "erscheinungsjahr": 1992,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 99,
+    "fields": {
+      "titel": "Ein Reise in den Bergen",
+      "autor": 16,
+      "erscheinungsjahr": 1853,
+      "kategorien": [
+        10
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 100,
+    "fields": {
+      "titel": "Der Brücke der verlorenen Zeit",
+      "autor": 36,
+      "erscheinungsjahr": 1825,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 101,
+    "fields": {
+      "titel": "Eine Herbst der verlorenen Zeit",
+      "autor": 3,
+      "erscheinungsjahr": 1899,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 102,
+    "fields": {
+      "titel": "Ein Fluss vor dem Krieg",
+      "autor": 12,
+      "erscheinungsjahr": 1992,
+      "kategorien": [
+        1
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 103,
+    "fields": {
+      "titel": "Ein Stimme der Dinge",
+      "autor": 46,
+      "erscheinungsjahr": 1801,
+      "kategorien": [
+        9
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 104,
+    "fields": {
+      "titel": "Eine Erinnerung im Zwielicht",
+      "autor": 52,
+      "erscheinungsjahr": 1761,
+      "kategorien": [
+        4,
+        7,
+        12
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 105,
+    "fields": {
+      "titel": "Die Winter vor dem Krieg",
+      "autor": 39,
+      "erscheinungsjahr": 1975,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 106,
+    "fields": {
+      "titel": "Die Schatten am Rand",
+      "autor": 7,
+      "erscheinungsjahr": 1780,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 107,
+    "fields": {
+      "titel": "Ein Schloss vor dem Krieg",
+      "autor": 46,
+      "erscheinungsjahr": 1880,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 108,
+    "fields": {
+      "titel": "Der Augenblick ohne Namen",
+      "autor": 14,
+      "erscheinungsjahr": 1861,
+      "kategorien": [
+        5,
+        6
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 109,
+    "fields": {
+      "titel": "Der Stadt aus Papier",
+      "autor": 18,
+      "erscheinungsjahr": 1801,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 110,
+    "fields": {
+      "titel": "Eine Morgen vor dem Krieg",
+      "autor": 60,
+      "erscheinungsjahr": 1880,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 111,
+    "fields": {
+      "titel": "Das Brief einer Freundschaft",
+      "autor": 55,
+      "erscheinungsjahr": 1757,
+      "kategorien": [
+        1,
+        3
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 112,
+    "fields": {
+      "titel": "Eine Reise am Meer",
+      "autor": 31,
+      "erscheinungsjahr": 1907,
+      "kategorien": [
+        3,
+        4,
+        6
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 113,
+    "fields": {
+      "titel": "Ein Kind ohne Namen",
+      "autor": 57,
+      "erscheinungsjahr": 1997,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 114,
+    "fields": {
+      "titel": "Das Glück vor dem Krieg",
+      "autor": 47,
+      "erscheinungsjahr": 1835,
+      "kategorien": [
+        4,
+        7
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 115,
+    "fields": {
+      "titel": "Eine Winter am Meer",
+      "autor": 12,
+      "erscheinungsjahr": 1906,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 116,
+    "fields": {
+      "titel": "Die Hafen ohne Namen",
+      "autor": 22,
+      "erscheinungsjahr": 1866,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 117,
+    "fields": {
+      "titel": "Eine Dorf einer Nacht",
+      "autor": 8,
+      "erscheinungsjahr": 1857,
+      "kategorien": [
+        11
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 118,
+    "fields": {
+      "titel": "Die Brücke im Exil",
+      "autor": 57,
+      "erscheinungsjahr": 2016,
+      "kategorien": [
+        8,
+        11
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 119,
+    "fields": {
+      "titel": "Ein Tag einer Nacht",
+      "autor": 51,
+      "erscheinungsjahr": 1775,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 120,
+    "fields": {
+      "titel": "Ein Morgen am Meer",
+      "autor": 47,
+      "erscheinungsjahr": 1957,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 121,
+    "fields": {
+      "titel": "Die Traum in Blau",
+      "autor": 43,
+      "erscheinungsjahr": 2020,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 122,
+    "fields": {
+      "titel": "Ein Brücke aus Staub",
+      "autor": 10,
+      "erscheinungsjahr": 1856,
+      "kategorien": [
+        5,
+        10
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 123,
+    "fields": {
+      "titel": "Der Fluss am Rand",
+      "autor": 56,
+      "erscheinungsjahr": 1829,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 124,
+    "fields": {
+      "titel": "Der Sommer aus Staub",
+      "autor": 5,
+      "erscheinungsjahr": 2008,
+      "kategorien": [
+        1
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 125,
+    "fields": {
+      "titel": "Die Hafen der verlorenen Zeit",
+      "autor": 40,
+      "erscheinungsjahr": 1756,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 126,
+    "fields": {
+      "titel": "Der Reise aus Papier",
+      "autor": 2,
+      "erscheinungsjahr": 1755,
+      "kategorien": [
+        2
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 127,
+    "fields": {
+      "titel": "Ein Dorf am Rand",
+      "autor": 33,
+      "erscheinungsjahr": 1933,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 128,
+    "fields": {
+      "titel": "Die Fenster nach dem Regen",
+      "autor": 8,
+      "erscheinungsjahr": 1921,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 129,
+    "fields": {
+      "titel": "Eine Winter ohne Namen",
+      "autor": 17,
+      "erscheinungsjahr": 1963,
+      "kategorien": [
+        11,
+        12
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 130,
+    "fields": {
+      "titel": "Das Anfang im Zwielicht",
+      "autor": 25,
+      "erscheinungsjahr": 1932,
+      "kategorien": [
+        11
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 131,
+    "fields": {
+      "titel": "Die Morgen ohne Namen",
+      "autor": 19,
+      "erscheinungsjahr": 2020,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 132,
+    "fields": {
+      "titel": "Die Lied einer Freundschaft",
+      "autor": 27,
+      "erscheinungsjahr": 1887,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 133,
+    "fields": {
+      "titel": "Ein Anfang der Dinge",
+      "autor": 29,
+      "erscheinungsjahr": 1996,
+      "kategorien": [
+        9
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 134,
+    "fields": {
+      "titel": "Die Stimme einer Freundschaft",
+      "autor": 26,
+      "erscheinungsjahr": 1844,
+      "kategorien": [
+        7
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 135,
+    "fields": {
+      "titel": "Das Fluss im Exil",
+      "autor": 20,
+      "erscheinungsjahr": 1939,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 136,
+    "fields": {
+      "titel": "Die Fahrt am Meer",
+      "autor": 39,
+      "erscheinungsjahr": 1990,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 137,
+    "fields": {
+      "titel": "Eine Sommer ohne Namen",
+      "autor": 54,
+      "erscheinungsjahr": 1876,
+      "kategorien": [
+        3
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 138,
+    "fields": {
+      "titel": "Eine Schloss am Meer",
+      "autor": 15,
+      "erscheinungsjahr": 1910,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 139,
+    "fields": {
+      "titel": "Eine Stunde in Blau",
+      "autor": 15,
+      "erscheinungsjahr": 1773,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 140,
+    "fields": {
+      "titel": "Eine Jahr einer Nacht",
+      "autor": 1,
+      "erscheinungsjahr": 1919,
+      "kategorien": [
+        12
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 141,
+    "fields": {
+      "titel": "Der Winter einer Freundschaft",
+      "autor": 13,
+      "erscheinungsjahr": 1927,
+      "kategorien": [
+        5
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 142,
+    "fields": {
+      "titel": "Eine Fluss nach dem Regen",
+      "autor": 17,
+      "erscheinungsjahr": 1995,
+      "kategorien": [
+        1
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 143,
+    "fields": {
+      "titel": "Der Tag im Norden",
+      "autor": 49,
+      "erscheinungsjahr": 2006,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 144,
+    "fields": {
+      "titel": "Eine Stunde aus Papier",
+      "autor": 39,
+      "erscheinungsjahr": 1899,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 145,
+    "fields": {
+      "titel": "Das Winter am Rand",
+      "autor": 54,
+      "erscheinungsjahr": 1880,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 146,
+    "fields": {
+      "titel": "Ein Nacht im Norden",
+      "autor": 1,
+      "erscheinungsjahr": 1855,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 147,
+    "fields": {
+      "titel": "Die Sommer einer Freundschaft",
+      "autor": 55,
+      "erscheinungsjahr": 2006,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 148,
+    "fields": {
+      "titel": "Die Geschichte vor dem Krieg",
+      "autor": 33,
+      "erscheinungsjahr": 1897,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 149,
+    "fields": {
+      "titel": "Ein Augenblick im Zwielicht",
+      "autor": 32,
+      "erscheinungsjahr": 1794,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 150,
+    "fields": {
+      "titel": "Eine Fluss aus Papier",
+      "autor": 54,
+      "erscheinungsjahr": 1942,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 151,
+    "fields": {
+      "titel": "Der Abschied im Norden",
+      "autor": 1,
+      "erscheinungsjahr": 1788,
+      "kategorien": [
+        6
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 152,
+    "fields": {
+      "titel": "Die Fluss im Zwielicht",
+      "autor": 4,
+      "erscheinungsjahr": 1871,
+      "kategorien": [
+        11,
+        12
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 153,
+    "fields": {
+      "titel": "Eine Abschied einer Freundschaft",
+      "autor": 16,
+      "erscheinungsjahr": 1883,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 154,
+    "fields": {
+      "titel": "Das Weg in Blau",
+      "autor": 10,
+      "erscheinungsjahr": 1946,
+      "kategorien": [
+        6
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 155,
+    "fields": {
+      "titel": "Das Glück aus Staub",
+      "autor": 35,
+      "erscheinungsjahr": 1911,
+      "kategorien": [
+        4,
+        5
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 156,
+    "fields": {
+      "titel": "Ein Garten der Dinge",
+      "autor": 35,
+      "erscheinungsjahr": 1859,
+      "kategorien": [
+        6,
+        7,
+        10
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 157,
+    "fields": {
+      "titel": "Ein Augenblick aus Papier",
+      "autor": 20,
+      "erscheinungsjahr": 2012,
+      "kategorien": [
+        8
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 158,
+    "fields": {
+      "titel": "Eine Geschichte im Norden",
+      "autor": 57,
+      "erscheinungsjahr": 1995,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 159,
+    "fields": {
+      "titel": "Ein Schatten vor dem Krieg",
+      "autor": 39,
+      "erscheinungsjahr": 1795,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 160,
+    "fields": {
+      "titel": "Eine Insel im Exil",
+      "autor": 55,
+      "erscheinungsjahr": 1769,
+      "kategorien": [
+        10
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 161,
+    "fields": {
+      "titel": "Die Stimme aus Papier",
+      "autor": 54,
+      "erscheinungsjahr": 1766,
+      "kategorien": [
+        4
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 162,
+    "fields": {
+      "titel": "Ein Sommer einer Freundschaft",
+      "autor": 25,
+      "erscheinungsjahr": 1838,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 163,
+    "fields": {
+      "titel": "Das Nacht der Dinge",
+      "autor": 31,
+      "erscheinungsjahr": 1986,
+      "kategorien": [
+        1,
+        2
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 164,
+    "fields": {
+      "titel": "Die Traum am Rand",
+      "autor": 27,
+      "erscheinungsjahr": 1898,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 165,
+    "fields": {
+      "titel": "Das Anfang in den Bergen",
+      "autor": 59,
+      "erscheinungsjahr": 1827,
+      "kategorien": [
+        5
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 166,
+    "fields": {
+      "titel": "Eine Stadt im Zwielicht",
+      "autor": 4,
+      "erscheinungsjahr": 1978,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 167,
+    "fields": {
+      "titel": "Ein Kirche ohne Namen",
+      "autor": 24,
+      "erscheinungsjahr": 1840,
+      "kategorien": [
+        12
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 168,
+    "fields": {
+      "titel": "Eine Kirche im Exil",
+      "autor": 29,
+      "erscheinungsjahr": 1786,
+      "kategorien": [
+        1
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 169,
+    "fields": {
+      "titel": "Eine Dorf der verlorenen Zeit",
+      "autor": 1,
+      "erscheinungsjahr": 2017,
+      "kategorien": [
+        2,
+        12
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 170,
+    "fields": {
+      "titel": "Ein Reise einer Freundschaft",
+      "autor": 13,
+      "erscheinungsjahr": 2003,
+      "kategorien": [
+        5
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 171,
+    "fields": {
+      "titel": "Das Stimme einer Nacht",
+      "autor": 28,
+      "erscheinungsjahr": 1755,
+      "kategorien": [
+        1
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 172,
+    "fields": {
+      "titel": "Der Schatten im Norden",
+      "autor": 15,
+      "erscheinungsjahr": 1791,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 173,
+    "fields": {
+      "titel": "Der Kirche einer Nacht",
+      "autor": 1,
+      "erscheinungsjahr": 1976,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 174,
+    "fields": {
+      "titel": "Das Herbst im Zwielicht",
+      "autor": 38,
+      "erscheinungsjahr": 1934,
+      "kategorien": [
+        2
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 175,
+    "fields": {
+      "titel": "Eine Nacht am Rand",
+      "autor": 5,
+      "erscheinungsjahr": 1797,
+      "kategorien": [
+        12
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 176,
+    "fields": {
+      "titel": "Eine Stadt der verlorenen Zeit",
+      "autor": 1,
+      "erscheinungsjahr": 2012,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 177,
+    "fields": {
+      "titel": "Ein Hoffnung einer Freundschaft",
+      "autor": 46,
+      "erscheinungsjahr": 1843,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 178,
+    "fields": {
+      "titel": "Die Insel nach dem Regen",
+      "autor": 4,
+      "erscheinungsjahr": 1879,
+      "kategorien": [
+        1
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 179,
+    "fields": {
+      "titel": "Der Fluss im Exil",
+      "autor": 60,
+      "erscheinungsjahr": 1842,
+      "kategorien": [
+        2,
+        7
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 180,
+    "fields": {
+      "titel": "Ein Fluss im Norden",
+      "autor": 54,
+      "erscheinungsjahr": 1783,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 181,
+    "fields": {
+      "titel": "Das Herbst am Meer",
+      "autor": 54,
+      "erscheinungsjahr": 1795,
+      "kategorien": [
+        2
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 182,
+    "fields": {
+      "titel": "Der Fahrt in Blau",
+      "autor": 57,
+      "erscheinungsjahr": 1939,
+      "kategorien": [
+        4,
+        11
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 183,
+    "fields": {
+      "titel": "Eine Schloss am Rand",
+      "autor": 4,
+      "erscheinungsjahr": 1947,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 184,
+    "fields": {
+      "titel": "Ein Morgen im Norden",
+      "autor": 27,
+      "erscheinungsjahr": 1960,
+      "kategorien": [
+        2
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 185,
+    "fields": {
+      "titel": "Der Augenblick im Exil",
+      "autor": 29,
+      "erscheinungsjahr": 1986,
+      "kategorien": [
+        10
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 186,
+    "fields": {
+      "titel": "Eine Reise im Exil",
+      "autor": 26,
+      "erscheinungsjahr": 1794,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 187,
+    "fields": {
+      "titel": "Eine Licht am Meer",
+      "autor": 20,
+      "erscheinungsjahr": 1773,
+      "kategorien": [
+        12
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 188,
+    "fields": {
+      "titel": "Der Fluss am Meer",
+      "autor": 28,
+      "erscheinungsjahr": 1823,
+      "kategorien": [
+        12
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 189,
+    "fields": {
+      "titel": "Eine Regen der verlorenen Zeit",
+      "autor": 14,
+      "erscheinungsjahr": 1854,
+      "kategorien": [
+        12
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 190,
+    "fields": {
+      "titel": "Eine Sturm am Meer",
+      "autor": 29,
+      "erscheinungsjahr": 1850,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 191,
+    "fields": {
+      "titel": "Die Winter einer Nacht",
+      "autor": 34,
+      "erscheinungsjahr": 1981,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 192,
+    "fields": {
+      "titel": "Eine Dorf der Dinge",
+      "autor": 36,
+      "erscheinungsjahr": 1967,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 193,
+    "fields": {
+      "titel": "Ein Erinnerung im Exil",
+      "autor": 42,
+      "erscheinungsjahr": 1843,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 194,
+    "fields": {
+      "titel": "Ein Abschied vor dem Krieg",
+      "autor": 6,
+      "erscheinungsjahr": 1992,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 195,
+    "fields": {
+      "titel": "Ein Fluss ohne Namen",
+      "autor": 14,
+      "erscheinungsjahr": 1932,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 196,
+    "fields": {
+      "titel": "Die Geschichte der Dinge",
+      "autor": 37,
+      "erscheinungsjahr": 1880,
+      "kategorien": [
+        6
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 197,
+    "fields": {
+      "titel": "Die Kirche aus Papier",
+      "autor": 9,
+      "erscheinungsjahr": 1952,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 198,
+    "fields": {
+      "titel": "Der Winter der Dinge",
+      "autor": 44,
+      "erscheinungsjahr": 1779,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 199,
+    "fields": {
+      "titel": "Das Licht einer Freundschaft",
+      "autor": 24,
+      "erscheinungsjahr": 1988,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 200,
+    "fields": {
+      "titel": "Eine Morgen aus Papier",
+      "autor": 42,
+      "erscheinungsjahr": 1981,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 201,
+    "fields": {
+      "titel": "Der Sturm im Exil",
+      "autor": 33,
+      "erscheinungsjahr": 1968,
+      "kategorien": [
+        3
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 202,
+    "fields": {
+      "titel": "Eine Licht in Blau",
+      "autor": 50,
+      "erscheinungsjahr": 1985,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 203,
+    "fields": {
+      "titel": "Die Glück am Meer",
+      "autor": 6,
+      "erscheinungsjahr": 1873,
+      "kategorien": [
+        2,
+        10
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 204,
+    "fields": {
+      "titel": "Eine Hafen einer Nacht",
+      "autor": 27,
+      "erscheinungsjahr": 1949,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 205,
+    "fields": {
+      "titel": "Das Morgen am Rand",
+      "autor": 24,
+      "erscheinungsjahr": 1823,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 206,
+    "fields": {
+      "titel": "Ein Brücke am Rand",
+      "autor": 36,
+      "erscheinungsjahr": 1970,
+      "kategorien": [
+        8
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 207,
+    "fields": {
+      "titel": "Der Haus vor dem Krieg",
+      "autor": 36,
+      "erscheinungsjahr": 1850,
+      "kategorien": [
+        1
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 208,
+    "fields": {
+      "titel": "Eine Traum im Exil",
+      "autor": 48,
+      "erscheinungsjahr": 1810,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 209,
+    "fields": {
+      "titel": "Ein Jahr am Meer",
+      "autor": 41,
+      "erscheinungsjahr": 1901,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 210,
+    "fields": {
+      "titel": "Eine Brief aus Papier",
+      "autor": 31,
+      "erscheinungsjahr": 1757,
+      "kategorien": [
+        10
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 211,
+    "fields": {
+      "titel": "Der Licht am Meer",
+      "autor": 36,
+      "erscheinungsjahr": 1949,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 212,
+    "fields": {
+      "titel": "Ein Sommer einer Nacht",
+      "autor": 3,
+      "erscheinungsjahr": 1896,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 213,
+    "fields": {
+      "titel": "Das Jahr im Norden",
+      "autor": 23,
+      "erscheinungsjahr": 1768,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 214,
+    "fields": {
+      "titel": "Der Reise ohne Namen",
+      "autor": 13,
+      "erscheinungsjahr": 1994,
+      "kategorien": [
+        7,
+        11
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 215,
+    "fields": {
+      "titel": "Eine Regen ohne Namen",
+      "autor": 32,
+      "erscheinungsjahr": 1950,
+      "kategorien": [
+        1
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 216,
+    "fields": {
+      "titel": "Eine Erinnerung in den Bergen",
+      "autor": 13,
+      "erscheinungsjahr": 2019,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 217,
+    "fields": {
+      "titel": "Ein Weg nach dem Regen",
+      "autor": 14,
+      "erscheinungsjahr": 1877,
+      "kategorien": [
+        12
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 218,
+    "fields": {
+      "titel": "Der Jahr am Meer",
+      "autor": 18,
+      "erscheinungsjahr": 2011,
+      "kategorien": [
+        3
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 219,
+    "fields": {
+      "titel": "Das Hafen der verlorenen Zeit",
+      "autor": 38,
+      "erscheinungsjahr": 1787,
+      "kategorien": [
+        1
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 220,
+    "fields": {
+      "titel": "Der Glück der Dinge",
+      "autor": 10,
+      "erscheinungsjahr": 1772,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 221,
+    "fields": {
+      "titel": "Ein Lied aus Papier",
+      "autor": 54,
+      "erscheinungsjahr": 1786,
+      "kategorien": [
+        11
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 222,
+    "fields": {
+      "titel": "Eine Reise am Rand",
+      "autor": 31,
+      "erscheinungsjahr": 1969,
+      "kategorien": [
+        8,
+        11
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 223,
+    "fields": {
+      "titel": "Das Brief nach dem Regen",
+      "autor": 44,
+      "erscheinungsjahr": 1751,
+      "kategorien": [
+        7
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 224,
+    "fields": {
+      "titel": "Ein Anfang im Exil",
+      "autor": 22,
+      "erscheinungsjahr": 1820,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 225,
+    "fields": {
+      "titel": "Das Regen aus Papier",
+      "autor": 41,
+      "erscheinungsjahr": 1984,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 226,
+    "fields": {
+      "titel": "Eine Ufer der verlorenen Zeit",
+      "autor": 43,
+      "erscheinungsjahr": 1855,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 227,
+    "fields": {
+      "titel": "Das Hoffnung einer Nacht",
+      "autor": 22,
+      "erscheinungsjahr": 1752,
+      "kategorien": [
+        5
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 228,
+    "fields": {
+      "titel": "Das Geschichte nach dem Regen",
+      "autor": 13,
+      "erscheinungsjahr": 1820,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 229,
+    "fields": {
+      "titel": "Die Abschied ohne Namen",
+      "autor": 47,
+      "erscheinungsjahr": 1977,
+      "kategorien": [
+        4
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 230,
+    "fields": {
+      "titel": "Ein Hafen am Rand",
+      "autor": 45,
+      "erscheinungsjahr": 1875,
+      "kategorien": [
+        2,
+        7
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 231,
+    "fields": {
+      "titel": "Das Brücke ohne Namen",
+      "autor": 30,
+      "erscheinungsjahr": 1778,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 232,
+    "fields": {
+      "titel": "Der Kind im Norden",
+      "autor": 15,
+      "erscheinungsjahr": 1896,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 233,
+    "fields": {
+      "titel": "Der Lied aus Papier",
+      "autor": 38,
+      "erscheinungsjahr": 1965,
+      "kategorien": [
+        1
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 234,
+    "fields": {
+      "titel": "Eine Sommer der Dinge",
+      "autor": 5,
+      "erscheinungsjahr": 1911,
+      "kategorien": [
+        8
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 235,
+    "fields": {
+      "titel": "Eine Schatten im Norden",
+      "autor": 56,
+      "erscheinungsjahr": 1772,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 236,
+    "fields": {
+      "titel": "Der Schatten am Meer",
+      "autor": 25,
+      "erscheinungsjahr": 1825,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 237,
+    "fields": {
+      "titel": "Die Weg am Rand",
+      "autor": 29,
+      "erscheinungsjahr": 1914,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 238,
+    "fields": {
+      "titel": "Der Sturm aus Staub",
+      "autor": 11,
+      "erscheinungsjahr": 1834,
+      "kategorien": [
+        5
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 239,
+    "fields": {
+      "titel": "Ein Haus vor dem Krieg",
+      "autor": 39,
+      "erscheinungsjahr": 1943,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 240,
+    "fields": {
+      "titel": "Das Sommer am Meer",
+      "autor": 52,
+      "erscheinungsjahr": 1930,
+      "kategorien": [
+        11
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 241,
+    "fields": {
+      "titel": "Die Augenblick der Dinge",
+      "autor": 10,
+      "erscheinungsjahr": 1768,
+      "kategorien": [
+        4
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 242,
+    "fields": {
+      "titel": "Ein Fahrt der verlorenen Zeit",
+      "autor": 17,
+      "erscheinungsjahr": 1984,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 243,
+    "fields": {
+      "titel": "Die Lied in den Bergen",
+      "autor": 1,
+      "erscheinungsjahr": 1790,
+      "kategorien": [
+        4,
+        6
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 244,
+    "fields": {
+      "titel": "Das Stimme vor dem Krieg",
+      "autor": 40,
+      "erscheinungsjahr": 1911,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 245,
+    "fields": {
+      "titel": "Das Brief am Rand",
+      "autor": 15,
+      "erscheinungsjahr": 2000,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 246,
+    "fields": {
+      "titel": "Die Garten am Rand",
+      "autor": 22,
+      "erscheinungsjahr": 1898,
+      "kategorien": [
+        2
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 247,
+    "fields": {
+      "titel": "Ein Winter im Norden",
+      "autor": 46,
+      "erscheinungsjahr": 1902,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 248,
+    "fields": {
+      "titel": "Die Haus im Exil",
+      "autor": 4,
+      "erscheinungsjahr": 1808,
+      "kategorien": [
+        5
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 249,
+    "fields": {
+      "titel": "Das Glück in Blau",
+      "autor": 12,
+      "erscheinungsjahr": 1876,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 250,
+    "fields": {
+      "titel": "Eine Jahr ohne Namen",
+      "autor": 21,
+      "erscheinungsjahr": 1852,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 251,
+    "fields": {
+      "titel": "Eine Kind im Zwielicht",
+      "autor": 19,
+      "erscheinungsjahr": 1754,
+      "kategorien": [
+        8
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 252,
+    "fields": {
+      "titel": "Eine Hafen im Exil",
+      "autor": 25,
+      "erscheinungsjahr": 1768,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 253,
+    "fields": {
+      "titel": "Ein Licht im Zwielicht",
+      "autor": 47,
+      "erscheinungsjahr": 1755,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 254,
+    "fields": {
+      "titel": "Ein Kind im Zwielicht",
+      "autor": 12,
+      "erscheinungsjahr": 1881,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 255,
+    "fields": {
+      "titel": "Ein Geschichte einer Nacht",
+      "autor": 22,
+      "erscheinungsjahr": 1857,
+      "kategorien": [
+        8,
+        11
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 256,
+    "fields": {
+      "titel": "Ein Schloss am Meer",
+      "autor": 2,
+      "erscheinungsjahr": 1871,
+      "kategorien": [
+        10
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 257,
+    "fields": {
+      "titel": "Die Brücke ohne Namen",
+      "autor": 45,
+      "erscheinungsjahr": 1953,
+      "kategorien": [
+        11
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 258,
+    "fields": {
+      "titel": "Eine Glück der Dinge",
+      "autor": 18,
+      "erscheinungsjahr": 1890,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 259,
+    "fields": {
+      "titel": "Ein Insel der verlorenen Zeit",
+      "autor": 45,
+      "erscheinungsjahr": 1778,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 260,
+    "fields": {
+      "titel": "Das Brief vor dem Krieg",
+      "autor": 49,
+      "erscheinungsjahr": 1833,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 261,
+    "fields": {
+      "titel": "Eine Nacht einer Freundschaft",
+      "autor": 33,
+      "erscheinungsjahr": 1875,
+      "kategorien": [
+        6,
+        10
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 262,
+    "fields": {
+      "titel": "Eine Reise im Zwielicht",
+      "autor": 42,
+      "erscheinungsjahr": 1754,
+      "kategorien": [
+        4
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 263,
+    "fields": {
+      "titel": "Der Licht aus Staub",
+      "autor": 37,
+      "erscheinungsjahr": 1977,
+      "kategorien": [
+        5
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 264,
+    "fields": {
+      "titel": "Das Weg ohne Namen",
+      "autor": 54,
+      "erscheinungsjahr": 1936,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 265,
+    "fields": {
+      "titel": "Der Regen einer Nacht",
+      "autor": 27,
+      "erscheinungsjahr": 1915,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 266,
+    "fields": {
+      "titel": "Der Spiegel einer Nacht",
+      "autor": 34,
+      "erscheinungsjahr": 1996,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 267,
+    "fields": {
+      "titel": "Die Insel der verlorenen Zeit",
+      "autor": 54,
+      "erscheinungsjahr": 1795,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 268,
+    "fields": {
+      "titel": "Eine Kirche einer Freundschaft",
+      "autor": 13,
+      "erscheinungsjahr": 1860,
+      "kategorien": [
+        3
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 269,
+    "fields": {
+      "titel": "Der Fenster in den Bergen",
+      "autor": 53,
+      "erscheinungsjahr": 1943,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 270,
+    "fields": {
+      "titel": "Eine Sommer einer Freundschaft",
+      "autor": 5,
+      "erscheinungsjahr": 1768,
+      "kategorien": [
+        4,
+        8
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 271,
+    "fields": {
+      "titel": "Der Brücke ohne Namen",
+      "autor": 55,
+      "erscheinungsjahr": 1924,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 272,
+    "fields": {
+      "titel": "Ein Hoffnung aus Staub",
+      "autor": 13,
+      "erscheinungsjahr": 1789,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 273,
+    "fields": {
+      "titel": "Eine Regen einer Freundschaft",
+      "autor": 20,
+      "erscheinungsjahr": 1852,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 274,
+    "fields": {
+      "titel": "Ein Herbst einer Freundschaft",
+      "autor": 44,
+      "erscheinungsjahr": 1882,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 275,
+    "fields": {
+      "titel": "Die Glück vor dem Krieg",
+      "autor": 16,
+      "erscheinungsjahr": 2016,
+      "kategorien": [
+        11
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 276,
+    "fields": {
+      "titel": "Das Augenblick der verlorenen Zeit",
+      "autor": 15,
+      "erscheinungsjahr": 2006,
+      "kategorien": [
+        1
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 277,
+    "fields": {
+      "titel": "Ein Abschied in Blau",
+      "autor": 56,
+      "erscheinungsjahr": 1769,
+      "kategorien": [
+        7,
+        12
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 278,
+    "fields": {
+      "titel": "Ein Ufer am Rand",
+      "autor": 48,
+      "erscheinungsjahr": 1927,
+      "kategorien": [
+        6
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 279,
+    "fields": {
+      "titel": "Der Kirche im Norden",
+      "autor": 6,
+      "erscheinungsjahr": 1874,
+      "kategorien": [
+        8
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 280,
+    "fields": {
+      "titel": "Eine Regen in den Bergen",
+      "autor": 42,
+      "erscheinungsjahr": 1843,
+      "kategorien": [
+        11
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 281,
+    "fields": {
+      "titel": "Die Stunde im Norden",
+      "autor": 46,
+      "erscheinungsjahr": 1940,
+      "kategorien": [
+        9
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 282,
+    "fields": {
+      "titel": "Der Weg der Dinge",
+      "autor": 53,
+      "erscheinungsjahr": 1915,
+      "kategorien": [
+        2,
+        11
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 283,
+    "fields": {
+      "titel": "Ein Hoffnung der Dinge",
+      "autor": 43,
+      "erscheinungsjahr": 1916,
+      "kategorien": [
+        3
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 284,
+    "fields": {
+      "titel": "Die Ufer ohne Namen",
+      "autor": 3,
+      "erscheinungsjahr": 1916,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 285,
+    "fields": {
+      "titel": "Die Jahr aus Staub",
+      "autor": 13,
+      "erscheinungsjahr": 1914,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 286,
+    "fields": {
+      "titel": "Der Licht nach dem Regen",
+      "autor": 10,
+      "erscheinungsjahr": 1813,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 287,
+    "fields": {
+      "titel": "Die Kind im Exil",
+      "autor": 38,
+      "erscheinungsjahr": 1989,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 288,
+    "fields": {
+      "titel": "Das Morgen der verlorenen Zeit",
+      "autor": 23,
+      "erscheinungsjahr": 1828,
+      "kategorien": [
+        8
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 289,
+    "fields": {
+      "titel": "Ein Licht der verlorenen Zeit",
+      "autor": 27,
+      "erscheinungsjahr": 1932,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 290,
+    "fields": {
+      "titel": "Das Dorf einer Nacht",
+      "autor": 55,
+      "erscheinungsjahr": 1907,
+      "kategorien": [
+        3
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 291,
+    "fields": {
+      "titel": "Ein Augenblick einer Freundschaft",
+      "autor": 23,
+      "erscheinungsjahr": 1912,
+      "kategorien": [
+        2
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 292,
+    "fields": {
+      "titel": "Die Anfang nach dem Regen",
+      "autor": 5,
+      "erscheinungsjahr": 1862,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 293,
+    "fields": {
+      "titel": "Der Herbst einer Nacht",
+      "autor": 21,
+      "erscheinungsjahr": 1958,
+      "kategorien": [
+        9,
+        12
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 294,
+    "fields": {
+      "titel": "Das Augenblick aus Papier",
+      "autor": 11,
+      "erscheinungsjahr": 1971,
+      "kategorien": [
+        5
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 295,
+    "fields": {
+      "titel": "Eine Geschichte aus Staub",
+      "autor": 32,
+      "erscheinungsjahr": 1982,
+      "kategorien": [
+        4,
+        9
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 296,
+    "fields": {
+      "titel": "Das Brief im Zwielicht",
+      "autor": 2,
+      "erscheinungsjahr": 1888,
+      "kategorien": [
+        9
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 297,
+    "fields": {
+      "titel": "Eine Herbst im Exil",
+      "autor": 55,
+      "erscheinungsjahr": 1952,
+      "kategorien": [
+        10
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 298,
+    "fields": {
+      "titel": "Ein Garten nach dem Regen",
+      "autor": 18,
+      "erscheinungsjahr": 1897,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 299,
+    "fields": {
+      "titel": "Ein Schloss der verlorenen Zeit",
+      "autor": 5,
+      "erscheinungsjahr": 1750,
+      "kategorien": [
+        10
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 300,
+    "fields": {
+      "titel": "Eine Lied aus Staub",
+      "autor": 56,
+      "erscheinungsjahr": 1990,
+      "kategorien": [
+        8
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 301,
+    "fields": {
+      "titel": "Die Licht nach dem Regen",
+      "autor": 47,
+      "erscheinungsjahr": 1945,
+      "kategorien": [
+        5
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 302,
+    "fields": {
+      "titel": "Der Licht einer Nacht",
+      "autor": 42,
+      "erscheinungsjahr": 1952,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 303,
+    "fields": {
+      "titel": "Das Anfang der verlorenen Zeit",
+      "autor": 24,
+      "erscheinungsjahr": 1887,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 304,
+    "fields": {
+      "titel": "Die Fahrt in Blau",
+      "autor": 49,
+      "erscheinungsjahr": 2010,
+      "kategorien": [
+        6
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 305,
+    "fields": {
+      "titel": "Die Garten in den Bergen",
+      "autor": 18,
+      "erscheinungsjahr": 1802,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 306,
+    "fields": {
+      "titel": "Ein Glück vor dem Krieg",
+      "autor": 52,
+      "erscheinungsjahr": 1832,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 307,
+    "fields": {
+      "titel": "Eine Herbst in Blau",
+      "autor": 17,
+      "erscheinungsjahr": 1867,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 308,
+    "fields": {
+      "titel": "Das Fluss einer Nacht",
+      "autor": 25,
+      "erscheinungsjahr": 1974,
+      "kategorien": [
+        11
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 309,
+    "fields": {
+      "titel": "Eine Fahrt der Dinge",
+      "autor": 55,
+      "erscheinungsjahr": 1883,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 310,
+    "fields": {
+      "titel": "Ein Brief der verlorenen Zeit",
+      "autor": 5,
+      "erscheinungsjahr": 1935,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 311,
+    "fields": {
+      "titel": "Eine Nacht im Zwielicht",
+      "autor": 25,
+      "erscheinungsjahr": 1820,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 312,
+    "fields": {
+      "titel": "Der Fluss aus Papier",
+      "autor": 12,
+      "erscheinungsjahr": 1989,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 313,
+    "fields": {
+      "titel": "Ein Regen in Blau",
+      "autor": 17,
+      "erscheinungsjahr": 1975,
+      "kategorien": [
+        7
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 314,
+    "fields": {
+      "titel": "Ein Schloss einer Nacht",
+      "autor": 47,
+      "erscheinungsjahr": 1891,
+      "kategorien": [
+        8,
+        12
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 315,
+    "fields": {
+      "titel": "Das Augenblick aus Staub",
+      "autor": 41,
+      "erscheinungsjahr": 1901,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 316,
+    "fields": {
+      "titel": "Das Winter in Blau",
+      "autor": 17,
+      "erscheinungsjahr": 1839,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 317,
+    "fields": {
+      "titel": "Die Glück einer Freundschaft",
+      "autor": 9,
+      "erscheinungsjahr": 1886,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 318,
+    "fields": {
+      "titel": "Das Brücke im Zwielicht",
+      "autor": 58,
+      "erscheinungsjahr": 2006,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 319,
+    "fields": {
+      "titel": "Eine Fluss im Norden",
+      "autor": 17,
+      "erscheinungsjahr": 1861,
+      "kategorien": [
+        12
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 320,
+    "fields": {
+      "titel": "Das Brücke einer Freundschaft",
+      "autor": 33,
+      "erscheinungsjahr": 1871,
+      "kategorien": [
+        5
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 321,
+    "fields": {
+      "titel": "Eine Garten am Rand",
+      "autor": 44,
+      "erscheinungsjahr": 1889,
+      "kategorien": [
+        3
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 322,
+    "fields": {
+      "titel": "Das Morgen vor dem Krieg",
+      "autor": 24,
+      "erscheinungsjahr": 1880,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 323,
+    "fields": {
+      "titel": "Ein Stunde aus Staub",
+      "autor": 33,
+      "erscheinungsjahr": 1922,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 324,
+    "fields": {
+      "titel": "Der Haus in den Bergen",
+      "autor": 19,
+      "erscheinungsjahr": 1928,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 325,
+    "fields": {
+      "titel": "Der Herbst im Norden",
+      "autor": 43,
+      "erscheinungsjahr": 1805,
+      "kategorien": [
+        11
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 326,
+    "fields": {
+      "titel": "Eine Licht vor dem Krieg",
+      "autor": 36,
+      "erscheinungsjahr": 1981,
+      "kategorien": [
+        8
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 327,
+    "fields": {
+      "titel": "Eine Haus in Blau",
+      "autor": 32,
+      "erscheinungsjahr": 1896,
+      "kategorien": [
+        7
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 328,
+    "fields": {
+      "titel": "Die Abschied in Blau",
+      "autor": 8,
+      "erscheinungsjahr": 1831,
+      "kategorien": [
+        11
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 329,
+    "fields": {
+      "titel": "Das Erinnerung im Zwielicht",
+      "autor": 38,
+      "erscheinungsjahr": 1797,
+      "kategorien": [
+        2
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 330,
+    "fields": {
+      "titel": "Ein Traum einer Nacht",
+      "autor": 46,
+      "erscheinungsjahr": 2001,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 331,
+    "fields": {
+      "titel": "Eine Licht im Zwielicht",
+      "autor": 58,
+      "erscheinungsjahr": 2008,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 332,
+    "fields": {
+      "titel": "Das Fahrt in Blau",
+      "autor": 17,
+      "erscheinungsjahr": 1930,
+      "kategorien": [
+        3
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 333,
+    "fields": {
+      "titel": "Der Reise in den Bergen",
+      "autor": 9,
+      "erscheinungsjahr": 1771,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 334,
+    "fields": {
+      "titel": "Ein Lied nach dem Regen",
+      "autor": 29,
+      "erscheinungsjahr": 1861,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 335,
+    "fields": {
+      "titel": "Das Reise einer Nacht",
+      "autor": 16,
+      "erscheinungsjahr": 1861,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 336,
+    "fields": {
+      "titel": "Das Kirche vor dem Krieg",
+      "autor": 33,
+      "erscheinungsjahr": 1971,
+      "kategorien": [
+        9
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 337,
+    "fields": {
+      "titel": "Das Erinnerung am Rand",
+      "autor": 21,
+      "erscheinungsjahr": 1950,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 338,
+    "fields": {
+      "titel": "Das Fenster aus Staub",
+      "autor": 33,
+      "erscheinungsjahr": 1769,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 339,
+    "fields": {
+      "titel": "Der Fluss vor dem Krieg",
+      "autor": 9,
+      "erscheinungsjahr": 1780,
+      "kategorien": [
+        2,
+        5,
+        6
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 340,
+    "fields": {
+      "titel": "Ein Nacht einer Freundschaft",
+      "autor": 17,
+      "erscheinungsjahr": 2016,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 341,
+    "fields": {
+      "titel": "Das Haus im Exil",
+      "autor": 50,
+      "erscheinungsjahr": 1841,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 342,
+    "fields": {
+      "titel": "Eine Hoffnung am Meer",
+      "autor": 59,
+      "erscheinungsjahr": 1846,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 343,
+    "fields": {
+      "titel": "Das Herbst aus Papier",
+      "autor": 27,
+      "erscheinungsjahr": 1950,
+      "kategorien": [
+        1,
+        11
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 344,
+    "fields": {
+      "titel": "Die Geschichte im Zwielicht",
+      "autor": 2,
+      "erscheinungsjahr": 1775,
+      "kategorien": [
+        7
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 345,
+    "fields": {
+      "titel": "Ein Sturm vor dem Krieg",
+      "autor": 27,
+      "erscheinungsjahr": 1838,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 346,
+    "fields": {
+      "titel": "Die Stunde in Blau",
+      "autor": 2,
+      "erscheinungsjahr": 1948,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 347,
+    "fields": {
+      "titel": "Das Brücke einer Nacht",
+      "autor": 15,
+      "erscheinungsjahr": 1932,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 348,
+    "fields": {
+      "titel": "Das Fahrt aus Papier",
+      "autor": 30,
+      "erscheinungsjahr": 1761,
+      "kategorien": [
+        7,
+        9
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 349,
+    "fields": {
+      "titel": "Das Stadt nach dem Regen",
+      "autor": 9,
+      "erscheinungsjahr": 1941,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 350,
+    "fields": {
+      "titel": "Das Regen in Blau",
+      "autor": 17,
+      "erscheinungsjahr": 1809,
+      "kategorien": [
+        5,
+        11
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 351,
+    "fields": {
+      "titel": "Der Garten der verlorenen Zeit",
+      "autor": 60,
+      "erscheinungsjahr": 1780,
+      "kategorien": [
+        5
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 352,
+    "fields": {
+      "titel": "Der Anfang im Norden",
+      "autor": 4,
+      "erscheinungsjahr": 1935,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 353,
+    "fields": {
+      "titel": "Ein Sturm am Meer",
+      "autor": 60,
+      "erscheinungsjahr": 1858,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 354,
+    "fields": {
+      "titel": "Der Erinnerung im Exil",
+      "autor": 27,
+      "erscheinungsjahr": 1787,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 355,
+    "fields": {
+      "titel": "Der Brücke im Zwielicht",
+      "autor": 43,
+      "erscheinungsjahr": 1770,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 356,
+    "fields": {
+      "titel": "Das Spiegel am Meer",
+      "autor": 37,
+      "erscheinungsjahr": 1969,
+      "kategorien": [
+        10
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 357,
+    "fields": {
+      "titel": "Die Dorf am Rand",
+      "autor": 44,
+      "erscheinungsjahr": 1980,
+      "kategorien": [
+        5
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 358,
+    "fields": {
+      "titel": "Eine Schloss im Exil",
+      "autor": 2,
+      "erscheinungsjahr": 1964,
+      "kategorien": [
+        5
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 359,
+    "fields": {
+      "titel": "Die Morgen der verlorenen Zeit",
+      "autor": 33,
+      "erscheinungsjahr": 1902,
+      "kategorien": [
+        11
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 360,
+    "fields": {
+      "titel": "Eine Abschied im Exil",
+      "autor": 36,
+      "erscheinungsjahr": 1895,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 361,
+    "fields": {
+      "titel": "Das Stunde einer Freundschaft",
+      "autor": 26,
+      "erscheinungsjahr": 1866,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 362,
+    "fields": {
+      "titel": "Eine Augenblick im Zwielicht",
+      "autor": 32,
+      "erscheinungsjahr": 1865,
+      "kategorien": [
+        3
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 363,
+    "fields": {
+      "titel": "Das Fluss am Meer",
+      "autor": 5,
+      "erscheinungsjahr": 1751,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 364,
+    "fields": {
+      "titel": "Das Tag der verlorenen Zeit",
+      "autor": 4,
+      "erscheinungsjahr": 1932,
+      "kategorien": [
+        4
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 365,
+    "fields": {
+      "titel": "Das Morgen in Blau",
+      "autor": 35,
+      "erscheinungsjahr": 1851,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 366,
+    "fields": {
+      "titel": "Die Insel einer Nacht",
+      "autor": 28,
+      "erscheinungsjahr": 1891,
+      "kategorien": [
+        4,
+        8
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 367,
+    "fields": {
+      "titel": "Eine Jahr in Blau",
+      "autor": 47,
+      "erscheinungsjahr": 1990,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 368,
+    "fields": {
+      "titel": "Die Hoffnung am Meer",
+      "autor": 57,
+      "erscheinungsjahr": 1890,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 369,
+    "fields": {
+      "titel": "Die Brücke vor dem Krieg",
+      "autor": 5,
+      "erscheinungsjahr": 1954,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 370,
+    "fields": {
+      "titel": "Der Sommer aus Papier",
+      "autor": 51,
+      "erscheinungsjahr": 1816,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 371,
+    "fields": {
+      "titel": "Der Ufer der Dinge",
+      "autor": 54,
+      "erscheinungsjahr": 1969,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 372,
+    "fields": {
+      "titel": "Eine Erinnerung einer Freundschaft",
+      "autor": 41,
+      "erscheinungsjahr": 1801,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 373,
+    "fields": {
+      "titel": "Eine Nacht vor dem Krieg",
+      "autor": 25,
+      "erscheinungsjahr": 1797,
+      "kategorien": [
+        1
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 374,
+    "fields": {
+      "titel": "Die Erinnerung der verlorenen Zeit",
+      "autor": 56,
+      "erscheinungsjahr": 2012,
+      "kategorien": [
+        4,
+        11
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 375,
+    "fields": {
+      "titel": "Ein Tag vor dem Krieg",
+      "autor": 40,
+      "erscheinungsjahr": 1857,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 376,
+    "fields": {
+      "titel": "Das Abschied am Rand",
+      "autor": 3,
+      "erscheinungsjahr": 1909,
+      "kategorien": [
+        4
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 377,
+    "fields": {
+      "titel": "Der Regen im Norden",
+      "autor": 39,
+      "erscheinungsjahr": 1838,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 378,
+    "fields": {
+      "titel": "Das Fluss im Zwielicht",
+      "autor": 16,
+      "erscheinungsjahr": 2019,
+      "kategorien": [
+        1,
+        5
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 379,
+    "fields": {
+      "titel": "Der Morgen nach dem Regen",
+      "autor": 3,
+      "erscheinungsjahr": 1983,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 380,
+    "fields": {
+      "titel": "Ein Tag aus Papier",
+      "autor": 40,
+      "erscheinungsjahr": 1844,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 381,
+    "fields": {
+      "titel": "Die Tag aus Staub",
+      "autor": 36,
+      "erscheinungsjahr": 1920,
+      "kategorien": [
+        1,
+        2,
+        7
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 382,
+    "fields": {
+      "titel": "Eine Licht am Rand",
+      "autor": 2,
+      "erscheinungsjahr": 1925,
+      "kategorien": [
+        1
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 383,
+    "fields": {
+      "titel": "Die Haus aus Staub",
+      "autor": 48,
+      "erscheinungsjahr": 1832,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 384,
+    "fields": {
+      "titel": "Das Dorf in Blau",
+      "autor": 48,
+      "erscheinungsjahr": 1896,
+      "kategorien": [
+        5,
+        8
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 385,
+    "fields": {
+      "titel": "Der Geschichte im Norden",
+      "autor": 16,
+      "erscheinungsjahr": 1811,
+      "kategorien": [
+        8
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 386,
+    "fields": {
+      "titel": "Das Kirche im Norden",
+      "autor": 7,
+      "erscheinungsjahr": 1845,
+      "kategorien": [
+        4
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 387,
+    "fields": {
+      "titel": "Die Sturm im Exil",
+      "autor": 59,
+      "erscheinungsjahr": 1849,
+      "kategorien": [
+        5
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 388,
+    "fields": {
+      "titel": "Die Augenblick der verlorenen Zeit",
+      "autor": 2,
+      "erscheinungsjahr": 2009,
+      "kategorien": [
+        5
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 389,
+    "fields": {
+      "titel": "Das Reise aus Staub",
+      "autor": 35,
+      "erscheinungsjahr": 1864,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 390,
+    "fields": {
+      "titel": "Die Geschichte am Meer",
+      "autor": 23,
+      "erscheinungsjahr": 1750,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 391,
+    "fields": {
+      "titel": "Eine Ufer im Norden",
+      "autor": 21,
+      "erscheinungsjahr": 1989,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 392,
+    "fields": {
+      "titel": "Das Sommer im Norden",
+      "autor": 17,
+      "erscheinungsjahr": 1858,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 393,
+    "fields": {
+      "titel": "Der Insel in Blau",
+      "autor": 57,
+      "erscheinungsjahr": 1998,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 394,
+    "fields": {
+      "titel": "Das Abschied im Zwielicht",
+      "autor": 41,
+      "erscheinungsjahr": 2012,
+      "kategorien": [
+        11
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 395,
+    "fields": {
+      "titel": "Eine Stunde der verlorenen Zeit",
+      "autor": 38,
+      "erscheinungsjahr": 1924,
+      "kategorien": [
+        2,
+        3,
+        8
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 396,
+    "fields": {
+      "titel": "Eine Morgen im Zwielicht",
+      "autor": 44,
+      "erscheinungsjahr": 1912,
+      "kategorien": [
+        9,
+        10
+      ]
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 397,
+    "fields": {
+      "titel": "Der Schatten nach dem Regen",
+      "autor": 27,
+      "erscheinungsjahr": 1765,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 398,
+    "fields": {
+      "titel": "Die Schloss in den Bergen",
+      "autor": 45,
+      "erscheinungsjahr": 1958,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 399,
+    "fields": {
+      "titel": "Die Geschichte einer Freundschaft",
+      "autor": 18,
+      "erscheinungsjahr": 1903,
+      "kategorien": []
+    }
+  },
+  {
+    "model": "bibliothek.buch",
+    "pk": 400,
+    "fields": {
+      "titel": "Ein Insel der Dinge",
+      "autor": 54,
+      "erscheinungsjahr": 1901,
+      "kategorien": [
+        8
+      ]
+    }
+  }
+]
